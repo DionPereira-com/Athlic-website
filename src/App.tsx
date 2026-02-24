@@ -540,33 +540,30 @@ export default function App() {
             <div className="grid lg:grid-cols-12 gap-12">
               <motion.div {...fadeInUp} className="lg:col-span-5">
                 <h2 className="text-4xl md:text-7xl font-bold tracking-tight mb-8">Plan de <br /> volgende stap.</h2>
-                <p className="text-xl text-dark-navy/60 mb-12">
+                <p className="text-xl text-dark-navy/60 mb-10">
                   We bespreken jouw situatie, kijken waar de kansen liggen, en of ons systeem past bij jouw gym. Geen verplichtingen, wel direct inzicht.
                 </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-dark-navy/70">
+                    <CheckCircle2 className="w-5 h-5 text-teal shrink-0" />
+                    <span>Gratis kennismakingsgesprek van 30 min</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-dark-navy/70">
+                    <CheckCircle2 className="w-5 h-5 text-teal shrink-0" />
+                    <span>Direct inzicht in jouw groeipotentie</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-dark-navy/70">
+                    <CheckCircle2 className="w-5 h-5 text-teal shrink-0" />
+                    <span>Geen verplichtingen</span>
+                  </div>
+                </div>
               </motion.div>
 
-              <div className="lg:col-span-7 grid md:grid-cols-1 gap-6">
-                <motion.div 
-                  {...fadeInUp}
-                  className="bg-white p-10 rounded-[3rem] shadow-xl border border-black/5"
-                >
-                  <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <input type="text" className="w-full px-6 py-4 rounded-2xl bg-light-gray/50 border-none focus:ring-2 focus:ring-coral/20 outline-none transition-all" placeholder="Naam" />
-                      <input type="text" className="w-full px-6 py-4 rounded-2xl bg-light-gray/50 border-none focus:ring-2 focus:ring-coral/20 outline-none transition-all" placeholder="Gym naam" />
-                    </div>
-                    <input type="url" className="w-full px-6 py-4 rounded-2xl bg-light-gray/50 border-none focus:ring-2 focus:ring-coral/20 outline-none transition-all" placeholder="Website (www.jouwgym.nl)" />
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <input type="email" className="w-full px-6 py-4 rounded-2xl bg-light-gray/50 border-none focus:ring-2 focus:ring-coral/20 outline-none transition-all" placeholder="E-mail" />
-                      <input type="tel" className="w-full px-6 py-4 rounded-2xl bg-light-gray/50 border-none focus:ring-2 focus:ring-coral/20 outline-none transition-all" placeholder="Telefoon" />
-                    </div>
-                    <button type="submit" className="w-full bg-coral hover:bg-coral/90 text-white font-bold py-5 rounded-2xl transition-all shadow-lg flex items-center justify-center gap-3">
-                      Plan Een Gesprek
-                      <ArrowRight className="w-5 h-5" />
-                    </button>
-                  </form>
-                </motion.div>
-              </div>
+              <motion.div {...fadeInUp} className="lg:col-span-7">
+                <div className="bg-white rounded-[3rem] shadow-xl border border-black/5 overflow-hidden">
+                  <div id="cal-booking-embed" style={{ width: '100%', height: '600px' }} />
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -604,7 +601,7 @@ export default function App() {
           </div>
           
           <div className="mt-20 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-medium-gray/50 uppercase tracking-widest">
-            <div>© 2024 Athlic. Alle rechten voorbehouden.</div>
+            <div>© 2026 Athlic. Alle rechten voorbehouden.</div>
             <div className="flex items-center gap-4">
               <span>Google Partner</span>
               <span>Performance Gym Specialist</span>
