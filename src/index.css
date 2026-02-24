@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-light-gray: #F0F0F0;
+  --color-deep-navy: #1A1A2E;
+  --color-medium-gray: #B0B0B0;
+  --color-dark-navy: #242440;
+  --color-coral: #E94560;
+  --color-teal: #16C79A;
+  --color-deep-blue: #0F3460;
+  --color-orange: #F5A623;
+  --color-periwinkle: #5C7AEA;
+  --color-mint: #A8E6CF;
+  --color-teal-link: #467886;
+  --color-purple-link: #96607D;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .glass-light {
+    background: rgba(26, 26, 46, 0.02);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(26, 26, 46, 0.05);
+  }
+  .text-gradient {
+    background: linear-gradient(to right, #ffffff, #B0B0B0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-deep-navy);
+  color: var(--color-light-gray);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
