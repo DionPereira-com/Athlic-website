@@ -116,9 +116,12 @@ export default function App() {
       <main className="relative">
         {/* Hero Section - Creative Layout */}
         <section className="pt-32 pb-20 px-6 relative min-h-[90vh] flex items-center overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full -z-10">
-  <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-coral/10 rounded-full blur-[120px] animate-pulse"></div>
-  <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-teal/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
+  <div className="absolute inset-0 bg-deep-navy" />
+  <div className="orb orb-1" />
+  <div className="orb orb-2" />
+  <div className="orb orb-3" />
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#1A1A2E_100%)]" />
 </div>
 
           <div className="max-w-[1200px] mx-auto grid lg:grid-cols-12 gap-12 items-center">
