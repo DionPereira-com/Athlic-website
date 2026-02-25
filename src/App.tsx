@@ -573,14 +573,14 @@ export default function App() {
               </motion.div>
 
               {/* Middle: What to expect */}
-              <motion.div {...fadeInUp} className="w-full lg:col-span-4 flex">
-                <div className="text-xs font-bold uppercase tracking-widest text-dark-navy/40 mb-6">Wat je mag verwachten</div>
+              <motion.div {...fadeInUp} className="w-full lg:col-span-4 flex flex-col gap-4">
+                <div className="text-xs font-bold uppercase tracking-widest text-dark-navy/40 mb-2">Wat je mag verwachten</div>
                 {[
                   { step: "01", title: "Gratis gesprek van 30 min", desc: "Geen verkooppraatje. We kijken samen naar jouw situatie en groeipotentie." },
                   { step: "02", title: "Kansen direct helder", desc: "Je verlaat het gesprek met concrete inzichten over jouw kansen." },
                   { step: "03", title: "Geen verplichtingen", desc: "We werken alleen samen als er een duidelijke match is. Geen druk." },
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-5 p-6 bg-white rounded-2xl border border-black/5 shadow-sm">
+                  <div key={i} className="flex gap-5 p-6 bg-white rounded-2xl border border-black/5 shadow-sm w-full">
                     <div className="text-2xl font-bold text-coral/20 shrink-0">{item.step}</div>
                     <div>
                       <div className="font-bold text-deep-navy mb-1">{item.title}</div>
@@ -591,10 +591,10 @@ export default function App() {
               </motion.div>
 
               {/* Right: CTA */}
-              <motion.div {...fadeInUp} className="lg:col-span-4 flex">
-                <div className="bg-deep-navy p-10 rounded-[2.5rem] text-white sticky top-32 flex flex-col h-full">
+              <motion.div {...fadeInUp} className="w-full lg:col-span-4">
+                <div className="bg-deep-navy p-8 rounded-[2.5rem] text-white flex flex-col w-full overflow-hidden">
                   <div className="text-xs font-bold uppercase tracking-widest text-white/40 mb-8">Klaar om te starten?</div>
-                  <h3 className="text-3xl font-bold mb-4">Boek een gratis kennismakingsgesprek</h3>
+                  <h3 className="text-2xl font-bold mb-4">Boek een gratis kennismakingsgesprek</h3>
                   <p className="text-white/60 mb-10 leading-relaxed">
                     Kies direct een moment dat jou uitkomt. Je ontvangt een bevestiging per e-mail.
                   </p>
@@ -607,7 +607,7 @@ export default function App() {
                     Plan Een Gesprek
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
-                  <div className="mt-6 flex items-center justify-center gap-6 text-xs text-white/60">
+                  <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-white/60">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       Gratis
