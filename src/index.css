@@ -55,3 +55,43 @@ body {
   width: max-content;
   animation: marquee 30s linear infinite;
 }
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.25;
+  animation: orbFloat 12s ease-in-out infinite;
+}
+.orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #E94560, transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation-duration: 14s;
+}
+.orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #16C79A, transparent 70%);
+  bottom: -10%;
+  right: -10%;
+  animation-duration: 18s;
+  animation-delay: -6s;
+}
+.orb-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #5C7AEA, transparent 70%);
+  top: 40%;
+  left: 50%;
+  animation-duration: 22s;
+  animation-delay: -3s;
+}
+@keyframes orbFloat {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  25%  { transform: translate(40px, -30px) scale(1.05); }
+  50%  { transform: translate(-20px, 40px) scale(0.95); }
+  75%  { transform: translate(-40px, -20px) scale(1.03); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
