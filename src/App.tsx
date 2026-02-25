@@ -560,9 +560,15 @@ export default function App() {
               </motion.div>
 
               <motion.div {...fadeInUp} className="lg:col-span-7">
-                <div className="bg-white rounded-[3rem] shadow-xl border border-black/5 overflow-hidden">
-                  <div id="cal-booking-embed" style={{ width: '100%', height: '1000px' }} />
-                </div>
+               <button
+  data-cal-namespace="kennismakingsgesprek"
+  data-cal-link="athlic/kennismakingsgesprek"
+  data-cal-config='{"layout":"month_view"}'
+  className="group bg-coral hover:bg-coral/90 text-white font-bold py-5 px-10 rounded-2xl transition-all shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center gap-3 text-lg"
+>
+  Plan Een Gesprek
+  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+</button>
               </motion.div>
             </div>
           </div>
