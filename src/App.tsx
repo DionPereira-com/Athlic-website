@@ -45,7 +45,7 @@ export default function App() {
     { name: 'Wat je krijgt', href: '#wat-je-krijgt' },
     { name: 'Voor wie', href: '#voor-wie' },
     { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+    { name: '', href: '#' },
   ];
 
   return (
@@ -69,7 +69,7 @@ export default function App() {
               ))}
             </ul>
             <div className="flex items-center gap-4">
-              <a href="#contact" className="bg-coral hover:bg-coral/90 text-white text-sm font-semibold py-2.5 px-5 rounded-lg transition-all shadow-[0_4px_14px_0_rgba(233,69,96,0.39)] hover:shadow-[0_6px_20px_rgba(233,69,96,0.23)]">
+              <a href="#" className="bg-coral hover:bg-coral/90 text-white text-sm font-semibold py-2.5 px-5 rounded-lg transition-all shadow-[0_4px_14px_0_rgba(233,69,96,0.39)] hover:shadow-[0_6px_20px_rgba(233,69,96,0.23)]">
                 Plan Een Gesprek
               </a>
             </div>
@@ -534,42 +534,96 @@ export default function App() {
           </div>
         </section>
 
-        {/* Contact Section */}
+{/* Contact Section */}
         <section id="contact" className="py-32 px-6 bg-light-gray text-deep-navy">
           <div className="max-w-[1200px] mx-auto">
-            <div className="grid lg:grid-cols-12 gap-12">
-              <motion.div {...fadeInUp} className="lg:col-span-5">
-                <h2 className="text-4xl md:text-7xl font-bold tracking-tight mb-8">Plan de <br /> volgende stap.</h2>
-                <p className="text-xl text-dark-navy/60 mb-10">
-                  We bespreken jouw situatie, kijken waar de kansen liggen, en of ons systeem past bij jouw gym. Geen verplichtingen, wel direct inzicht.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-dark-navy/70">
-                    <CheckCircle2 className="w-5 h-5 text-teal shrink-0" />
-                    <span>Gratis kennismakingsgesprek van 30 min</span>
+
+            {/* Header */}
+            <motion.div {...fadeInUp} className="text-center mb-16">
+              <h2 className="text-4xl md:text-7xl font-bold tracking-tight mb-6">Plan de <br /> volgende stap.</h2>
+              <p className="text-xl text-dark-navy/60 max-w-2xl mx-auto">
+                We bespreken jouw situatie, kijken waar de kansen liggen, en of ons systeem past bij jouw gym.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-12 gap-8 items-start">
+
+              {/* Left: Photo + Bio card */}
+              <motion.div {...fadeInUp} className="lg:col-span-4">
+                <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-black/5">
+                  <div className="bg-gradient-to-br from-deep-navy to-dark-navy px-8 pt-8 pb-0 flex justify-center">
+                    <img
+                      src="/dion.png"
+                      alt="Dion Pereira - Oprichter Athlic"
+                      className="w-48 h-48 object-cover object-top"
+                    />
                   </div>
-                  <div className="flex items-center gap-3 text-dark-navy/70">
-                    <CheckCircle2 className="w-5 h-5 text-teal shrink-0" />
-                    <span>Direct inzicht in jouw groeipotentie</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-dark-navy/70">
-                    <CheckCircle2 className="w-5 h-5 text-teal shrink-0" />
-                    <span>Geen verplichtingen</span>
+                  <div className="p-8">
+                    <div className="font-bold text-xl text-deep-navy">Dion Pereira</div>
+                    <div className="text-coral text-sm font-semibold uppercase tracking-widest mb-4">Oprichter, Athlic</div>
+                    <p className="text-dark-navy/60 text-sm leading-relaxed">
+                      10+ jaar ervaring in Google Ads en online vindbaarheid. Gespecialiseerd in performance gyms en HYROX.
+                    </p>
+                    <div className="mt-6 pt-6 border-t border-black/5 flex items-center gap-2 text-sm text-dark-navy/50">
+                      <div className="w-2 h-2 bg-teal rounded-full animate-pulse"></div>
+                      Reageert binnen 1 werkdag
+                    </div>
                   </div>
                 </div>
               </motion.div>
 
-              <motion.div {...fadeInUp} className="lg:col-span-7">
-               <button
-  data-cal-namespace="kennismakingsgesprek"
-  data-cal-link="athlic/kennismakingsgesprek"
-  data-cal-config='{"layout":"month_view"}'
-  className="group bg-coral hover:bg-coral/90 text-white font-bold py-5 px-10 rounded-2xl transition-all shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center gap-3 text-lg"
->
-  Plan Een Gesprek
-  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-</button>
+              {/* Middle: What to expect */}
+              <motion.div {...fadeInUp} className="lg:col-span-4 space-y-4">
+                <div className="text-xs font-bold uppercase tracking-widest text-dark-navy/40 mb-6">Wat je mag verwachten</div>
+                {[
+                  { step: "01", title: "Gratis gesprek van 30 min", desc: "Geen verkooppraatje. We kijken samen naar jouw situatie en groeipotentie." },
+                  { step: "02", title: "Direct bruikbaar inzicht", desc: "Je verlaat het gesprek met concrete inzichten over jouw lokale zichtbaarheid." },
+                  { step: "03", title: "Geen verplichtingen", desc: "We werken alleen samen als er een duidelijke match is. Geen druk." },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-5 p-6 bg-white rounded-2xl border border-black/5 shadow-sm">
+                    <div className="text-2xl font-bold text-coral/20 shrink-0">{item.step}</div>
+                    <div>
+                      <div className="font-bold text-deep-navy mb-1">{item.title}</div>
+                      <div className="text-sm text-dark-navy/60 leading-relaxed">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
               </motion.div>
+
+              {/* Right: CTA */}
+              <motion.div {...fadeInUp} className="lg:col-span-4">
+                <div className="bg-deep-navy p-10 rounded-[2.5rem] text-white sticky top-32">
+                  <div className="text-xs font-bold uppercase tracking-widest text-white/40 mb-8">Klaar om te starten?</div>
+                  <h3 className="text-3xl font-bold mb-4">Boek een gratis kennismakingsgesprek</h3>
+                  <p className="text-white/60 mb-10 leading-relaxed">
+                    Kies direct een moment dat jou uitkomt. Je ontvangt een bevestiging per e-mail.
+                  </p>
+                  <button
+                    data-cal-namespace="kennismakingsgesprek"
+                    data-cal-link="athlic/kennismakingsgesprek"
+                    data-cal-config='{"layout":"month_view"}'
+                    className="group w-full bg-coral hover:bg-coral/90 text-white font-bold py-5 px-8 rounded-2xl transition-all shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3 text-lg"
+                  >
+                    Plan Een Gesprek
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <div className="mt-6 flex items-center justify-center gap-6 text-xs text-white/30">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      Gratis
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      30 minuten
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      Geen verplichtingen
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
             </div>
           </div>
         </section>
