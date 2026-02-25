@@ -523,7 +523,7 @@ export default function App() {
                       <CheckCircle2 className="w-6 h-6 text-coral" />
                     </div>
                     <div>
-                      <div className="text-white font-bold">Dion Pereira - Oprichter</div>
+                      <div className="text-white font-bold"> Pereira - Oprichter</div>
                       <div className="text-medium-gray text-sm uppercase tracking-widest">Athlic Performance</div>
                     </div>
                   </div>
@@ -553,7 +553,7 @@ export default function App() {
                 <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-black/5">
                   <div className="bg-gradient-to-br from-deep-navy to-dark-navy px-8 pt-8 pb-0 flex justify-center">
                     <img
-                      src="/dion.png"
+                      src="https://www.dionpereira.com/wp-content/uploads/2022/04/dion-pereira.webp"
                       alt="Dion Pereira - Oprichter Athlic"
                       className="w-48 h-48 object-cover object-top"
                     />
