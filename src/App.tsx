@@ -546,10 +546,10 @@ export default function App() {
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-12 gap-8 items-start">
+            <div className="grid lg:grid-cols-12 gap-8 items-stretch">
 
               {/* Left: Photo + Bio card */}
-              <motion.div {...fadeInUp} className="lg:col-span-4">
+              <motion.div {...fadeInUp} className="lg:col-span-4 flex">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-black/5">
                   <div className="bg-gradient-to-br from-deep-navy to-dark-navy px-8 pt-8 pb-0 flex justify-center">
                     <img
@@ -562,7 +562,7 @@ export default function App() {
                     <div className="font-bold text-xl text-deep-navy">Dion Pereira</div>
                     <div className="text-coral text-sm font-semibold uppercase tracking-widest mb-4">Oprichter, Athlic</div>
                     <p className="text-dark-navy/60 text-sm leading-relaxed">
-                      10+ jaar ervaring in Google Ads en online vindbaarheid. Gespecialiseerd in performance gyms en HYROX.
+                      10+ jaar ervaring in Google Ads en online vindbaarheid. Gespecialiseerd in HYROX en performance gyms.
                     </p>
                     <div className="mt-6 pt-6 border-t border-black/5 flex items-center gap-2 text-sm text-dark-navy/50">
                       <div className="w-2 h-2 bg-teal rounded-full animate-pulse"></div>
@@ -577,7 +577,7 @@ export default function App() {
                 <div className="text-xs font-bold uppercase tracking-widest text-dark-navy/40 mb-6">Wat je mag verwachten</div>
                 {[
                   { step: "01", title: "Gratis gesprek van 30 min", desc: "Geen verkooppraatje. We kijken samen naar jouw situatie en groeipotentie." },
-                  { step: "02", title: "Direct bruikbaar inzicht", desc: "Je verlaat het gesprek met concrete inzichten over jouw lokale zichtbaarheid." },
+                  { step: "02", title: "Kansen direct helder", desc: "Je verlaat het gesprek met concrete inzichten over jouw kansen." },
                   { step: "03", title: "Geen verplichtingen", desc: "We werken alleen samen als er een duidelijke match is. Geen druk." },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-5 p-6 bg-white rounded-2xl border border-black/5 shadow-sm">
@@ -591,8 +591,8 @@ export default function App() {
               </motion.div>
 
               {/* Right: CTA */}
-              <motion.div {...fadeInUp} className="lg:col-span-4">
-                <div className="bg-deep-navy p-10 rounded-[2.5rem] text-white sticky top-32">
+              <motion.div {...fadeInUp} className="lg:col-span-4 flex">
+                <div className="bg-deep-navy p-10 rounded-[2.5rem] text-white sticky top-32 flex flex-col h-full">
                   <div className="text-xs font-bold uppercase tracking-widest text-white/40 mb-8">Klaar om te starten?</div>
                   <h3 className="text-3xl font-bold mb-4">Boek een gratis kennismakingsgesprek</h3>
                   <p className="text-white/60 mb-10 leading-relaxed">
@@ -607,7 +607,7 @@ export default function App() {
                     Plan Een Gesprek
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
-                  <div className="mt-6 flex items-center justify-center gap-6 text-xs text-white/30">
+                  <div className="mt-6 flex items-center justify-center gap-6 text-xs text-white/60">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       Gratis
