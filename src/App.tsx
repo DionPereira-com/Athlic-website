@@ -546,10 +546,10 @@ export default function App() {
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
               {/* Left: Photo + Bio card */}
-              <motion.div {...fadeInUp} className="lg:col-span-4 flex">
+              <motion.div {...fadeInUp} className="w-full lg:col-span-4 flex">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-black/5">
                   <div className="bg-gradient-to-br from-deep-navy to-dark-navy px-8 pt-8 pb-0 flex justify-center">
                     <img
@@ -573,7 +573,7 @@ export default function App() {
               </motion.div>
 
               {/* Middle: What to expect */}
-              <motion.div {...fadeInUp} className="lg:col-span-4 space-y-4">
+              <motion.div {...fadeInUp} className="w-full lg:col-span-4 flex">
                 <div className="text-xs font-bold uppercase tracking-widest text-dark-navy/40 mb-6">Wat je mag verwachten</div>
                 {[
                   { step: "01", title: "Gratis gesprek van 30 min", desc: "Geen verkooppraatje. We kijken samen naar jouw situatie en groeipotentie." },
