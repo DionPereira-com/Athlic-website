@@ -319,7 +319,7 @@ export default function App() {
               <div key={i} className="flex items-center gap-12 px-6">
                 <span className="text-2xl font-bold text-white/20 tracking-tighter italic uppercase">Complete systemen</span>
                 <span className="text-2xl font-bold text-coral/40 tracking-tighter italic uppercase">20+ jaar Google expertise</span>
-                <span className="text-2xl font-bold text-white/20 tracking-tighter italic uppercase">Voorspelbare resultaten</span>
+                <span className="text-2xl font-bold text-teal/20 tracking-tighter italic uppercase">Voorspelbare resultaten</span>
               </div>
             ))}
           </div>
