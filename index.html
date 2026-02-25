@@ -13,6 +13,9 @@
     <meta property="og:description" content="Voorspelbare instroom van proefleden voor HYROX en performance gyms. Complete Google-systemen van advertenties tot geautomatiseerde opvolging." />
     <meta property="og:url" content="https://athlic.io/" />
     <meta property="og:type" content="website" />
+
+    <!-- Search Console Verification -->
+    <meta name="google-site-verification" content="BtcDU6cy1aY-i7DI4JIBG4evsUjPahHCR5fOXH9W6c8" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -22,32 +25,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <!-- Cal.com Embed -->
-<script type="text/javascript">
-  (function (C, A, L) {
-    let p = function (a, ar) { a.q.push(ar); };
-    let d = C.document;
-    C.Cal = C.Cal || function () {
-      let cal = C.Cal; let ar = arguments;
-      if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; }
-      if (ar[0] === L) {
-        const api = function () { p(api, arguments); };
-        const namespace = ar[1]; api.q = api.q || [];
-        if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, [L, namespace, ar[2]]); }
-        else { p(cal, ar); } return;
-      } p(cal, ar);
-    };
-  })(window, "https://app.cal.com/embed/embed.js", "init");
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5KBLXGRC');</script>
+    <!-- End Google Tag Manager -->
 
-  Cal("init", "kennismakingsgesprek", { origin: "https://cal.eu" });
-  Cal.ns.kennismakingsgesprek("ui", {
-    styles: { branding: { brandColor: "#E94560" } },
-    hideEventTypeDetails: false,
-    layout: "month_view"
-  });
-</script>
+    <!-- Cal.com Embed -->
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal; let ar = arguments;
+          if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; }
+          if (ar[0] === L) {
+            const api = function () { p(api, arguments); };
+            const namespace = ar[1]; api.q = api.q || [];
+            if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, [L, namespace, ar[2]]); }
+            else { p(cal, ar); } return;
+          } p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+
+      Cal("init", "kennismakingsgesprek", { origin: "https://cal.eu" });
+      Cal.ns.kennismakingsgesprek("ui", {
+        styles: { branding: { brandColor: "#E94560" } },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+    </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KBLXGRC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
