@@ -561,7 +561,7 @@ export default function App() {
 
               <motion.div {...fadeInUp} className="lg:col-span-7">
                 <div className="bg-white rounded-[3rem] shadow-xl border border-black/5 overflow-hidden">
-                  <div id="cal-booking-embed" style={{ width: '100%', height: '600px' }} />
+                  <div id="cal-booking-embed" style={{ width: '100%', height: '900px' }} />
                 </div>
               </motion.div>
             </div>
