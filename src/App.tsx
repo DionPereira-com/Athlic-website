@@ -115,7 +115,7 @@ export default function App() {
 
       <main className="relative">
         {/* Hero Section - Creative Layout */}
-        <section className="pt-32 pb-20 px-6 relative min-h-[90vh] flex items-center overflow-hidden">
+        <section className="pt-32 pb-20 px-6 relative min-h-[90vh] flex items-center">
           <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
   <div className="absolute inset-0 bg-deep-navy" />
   <div className="orb orb-1" />
