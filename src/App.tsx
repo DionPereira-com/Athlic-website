@@ -123,7 +123,7 @@ export default function App() {
     loop
     playsInline
     className="absolute inset-0 w-full h-full object-cover"
-    src="https://raw.githubusercontent.com/DionPereira-com/Athlic-website/main/hero-bg.mp4"
+    src="/hero-bg.mp4"
   />
   <div className="absolute inset-0 bg-deep-navy/70" />
 </div>
