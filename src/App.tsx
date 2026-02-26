@@ -38,7 +38,26 @@ export default function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
+useEffect(() => {
+  const granim = new (window as any).Granim({
+    element: '#granim-canvas',
+    direction: 'radial',
+    isPausedWhenNotInView: true,
+    states: {
+      'default-state': {
+        gradients: [
+          ['#1A1A2E', '#1f1f3a'],
+          ['#1A1A2E', '#2a1a24'],
+          ['#1A1A2E', '#1a2a2a'],
+          ['#1A1A2E', '#1f1f3a'],
+        ],
+        transitionSpeed: 4000,
+      }
+    }
+  });
+  return () => granim.destroy();
+}, []);
+  
   const navLinks = [
     { name: 'Resultaat', href: '#resultaat' },
     { name: 'Aanpak', href: '#aanpak' },
@@ -116,27 +135,8 @@ export default function App() {
       <main className="relative">
         {/* Hero Section - Creative Layout */}
         <section className="pt-32 pb-20 px-6 relative min-h-[90vh] flex items-center">
-          <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
-  <div className="absolute inset-0 bg-deep-navy" />
-  <div style={{
-    position: 'absolute', width: '600px', height: '600px', borderRadius: '50%',
-    background: 'radial-gradient(circle, #E94560, transparent 70%)',
-    filter: 'blur(80px)', opacity: 0.25, top: '-10%', left: '-10%',
-    animation: 'orbFloat 14s ease-in-out infinite',
-  }} />
-  <div style={{
-    position: 'absolute', width: '500px', height: '500px', borderRadius: '50%',
-    background: 'radial-gradient(circle, #16C79A, transparent 70%)',
-    filter: 'blur(80px)', opacity: 0.25, bottom: '-10%', right: '-10%',
-    animation: 'orbFloat 18s ease-in-out infinite', animationDelay: '-6s',
-  }} />
-  <div style={{
-    position: 'absolute', width: '400px', height: '400px', borderRadius: '50%',
-    background: 'radial-gradient(circle, #5C7AEA, transparent 70%)',
-    filter: 'blur(80px)', opacity: 0.25, top: '40%', left: '50%',
-    animation: 'orbFloat 22s ease-in-out infinite', animationDelay: '-3s',
-  }} />
-  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#1A1A2E_100%)]" />
+       <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
+  <canvas id="granim-canvas" className="absolute inset-0 w-full h-full" />
 </div>
 
           <div className="max-w-[1200px] mx-auto grid lg:grid-cols-12 gap-12 items-center">
