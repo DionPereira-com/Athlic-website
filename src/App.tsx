@@ -38,25 +38,6 @@ export default function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-useEffect(() => {
-  const granim = new (window as any).Granim({
-    element: '#granim-canvas',
-    direction: 'radial',
-    isPausedWhenNotInView: true,
-    states: {
-      'default-state': {
-        gradients: [
-          ['#1A1A2E', '#1f1f3a'],
-          ['#1A1A2E', '#2a1a24'],
-          ['#1A1A2E', '#1a2a2a'],
-          ['#1A1A2E', '#1f1f3a'],
-        ],
-        transitionSpeed: 4000,
-      }
-    }
-  });
-  return () => granim.destroy();
-}, []);
   
   const navLinks = [
     { name: 'Resultaat', href: '#resultaat' },
@@ -142,7 +123,7 @@ useEffect(() => {
     loop
     playsInline
     className="absolute inset-0 w-full h-full object-cover"
-    src="/hero-bg.mp4"
+    src="https://raw.githubusercontent.com/DionPereira-com/Athlic-website/main/hero-bg.mp4"
   />
   <div className="absolute inset-0 bg-deep-navy/70" />
 </div>
