@@ -136,7 +136,15 @@ useEffect(() => {
         {/* Hero Section - Creative Layout */}
         <section className="pt-32 pb-20 px-6 relative min-h-[90vh] flex items-center">
        <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
-  <canvas id="granim-canvas" className="absolute inset-0 w-full h-full" />
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
+    src="/hero-bg.mp4"
+  />
+  <div className="absolute inset-0 bg-deep-navy/70" />
 </div>
 
           <div className="max-w-[1200px] mx-auto grid lg:grid-cols-12 gap-12 items-center">
