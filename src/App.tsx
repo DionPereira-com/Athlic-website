@@ -125,7 +125,7 @@ export default function App() {
     className="absolute inset-0 w-full h-full object-cover"
     src="/hero-bg.mp4"
   />
-  <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/90 to-deep-navy/40" />
+  <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/90 to-deep-navy/60" />
 </div>
 
           <div className="max-w-[1200px] mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
