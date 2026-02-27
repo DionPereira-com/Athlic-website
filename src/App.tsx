@@ -533,7 +533,7 @@ export default function App() {
                       <CheckCircle2 className="w-6 h-6 text-coral" />
                     </div>
                     <div>
-                      <div className="text-white font-bold"> Pereira - Oprichter</div>
+                      <div className="text-white font-bold"> Dion Pereira - Oprichter</div>
                       <div className="text-medium-gray text-sm uppercase tracking-widest">Athlic Performance</div>
                     </div>
                   </div>
