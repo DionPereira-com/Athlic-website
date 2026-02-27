@@ -146,7 +146,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-8 leading-[0.95] text-gradient"
+                className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-8 leading-[1.05] text-gradient pb-2"
               >
                 Een volle gym <br /> begint op Google.
               </motion.h1>
