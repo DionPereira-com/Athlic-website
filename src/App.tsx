@@ -331,10 +331,10 @@ export default function App() {
             <div className="grid lg:grid-cols-2 gap-20 items-start">
               <motion.div {...fadeInUp} className="lg:sticky lg:top-32 mb-12 lg:mb-0">
                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">De Athlic aanpak</h2>
-                <p className="text-xl text-medium-gray mb-12">
+                <p className="text-xl text-medium-gray mb-6">
                   Een doordacht proces om jouw gym lokaal te domineren. Geen giswerk, maar data-gedreven stappen.
                 </p>
-                <p className="text-xl text-medium-gray mb-6">
+                <p className="text-xl text-medium-gray mb-12">
   Zo gestructureerd als een race-prep schema. Zo meetbaar als je finish time.
 </p>
                 <div className="flex items-center gap-4 p-6 glass rounded-3xl border-white/5 max-w-sm">
