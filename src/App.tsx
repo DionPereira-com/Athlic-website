@@ -123,7 +123,7 @@ export default function App() {
     loop
     playsInline
     className="absolute inset-0 w-full h-full object-cover"
-    src="/hero-bg.mp4"
+    src="/hero-bg2.mp4"
   />
   <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/95 to-deep-navy/70" />
 </div>
