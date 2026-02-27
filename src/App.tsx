@@ -334,6 +334,9 @@ export default function App() {
                 <p className="text-xl text-medium-gray mb-12">
                   Een doordacht proces om jouw gym lokaal te domineren. Geen giswerk, maar data-gedreven stappen.
                 </p>
+                <p>
+                    Zo gestructureerd als een race-prep schema. Zo meetbaar als je finish time.
+                  </p>
                 <div className="flex items-center gap-4 p-6 glass rounded-3xl border-white/5 max-w-sm">
                   <div className="w-12 h-12 bg-teal/20 rounded-full flex items-center justify-center shrink-0">
                     <ArrowRight className="w-6 h-6 text-teal" />
@@ -509,7 +512,7 @@ export default function App() {
                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">Waarom Athlic?</h2>
                 <div className="space-y-6 text-lg text-medium-gray leading-relaxed">
                   <p>
-                    Wij zijn geen algemeen marketingbureau. Wij zijn specialisten in de <span className="text-white font-bold italic">performance fitness niche</span>.
+                    Wij zijn geen algemeen marketingbureau. Wij zijn specialisten in de <span className="text-white font-bold italic">HYROX en performance fitness niche</span>.
                   </p>
                   <p>
                     Onze focus ligt op vindbaarheid en automatisering. Geen vage branding, maar systemen die direct bijdragen aan de groei van je ledenbestand.
