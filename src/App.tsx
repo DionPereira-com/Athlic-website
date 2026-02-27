@@ -334,7 +334,7 @@ export default function App() {
                 <p className="text-xl text-medium-gray mb-12">
                   Een doordacht proces om jouw gym lokaal te domineren. Geen giswerk, maar data-gedreven stappen.
                 </p>
-                <p className="text-xl text-medium-gray mb-12">
+                <p className="text-xl text-medium-gray mb-6">
   Zo gestructureerd als een race-prep schema. Zo meetbaar als je finish time.
 </p>
                 <div className="flex items-center gap-4 p-6 glass rounded-3xl border-white/5 max-w-sm">
