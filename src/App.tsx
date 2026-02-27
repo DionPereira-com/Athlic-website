@@ -148,7 +148,7 @@ export default function App() {
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-8 leading-[0.95] text-gradient"
               >
-                Voorspelbare <br /> instroom van <br /> proefleden.
+                Een volle gym <br /> begint op Google.
               </motion.h1>
               
               <motion.p 
