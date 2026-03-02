@@ -248,9 +248,9 @@ export default function App() {
           <div className="animate-marquee whitespace-nowrap">
             {[1,2,3,4].map(i => (
               <div key={i} className="flex items-center gap-12 px-6">
-                <span className="text-2xl font-bold text-white/20 tracking-tighter italic uppercase">Complete systemen</span>
-                <span className="text-2xl font-bold text-coral/40 tracking-tighter italic uppercase">20+ jaar Google expertise</span>
-                <span className="text-2xl font-bold text-teal/20 tracking-tighter italic uppercase">Voorspelbare resultaten</span>
+                <span className="text-2xl font-bold text-white/20 hover:text-white tracking-tighter italic uppercase transition-colors duration-300">Complete systemen</span>
+                <span className="text-2xl font-bold text-coral/40 hover:text-coral tracking-tighter italic uppercase transition-colors duration-300">20+ jaar Google expertise</span>
+                <span className="text-2xl font-bold text-teal/20 hover:text-teal tracking-tighter italic uppercase transition-colors duration-300">Voorspelbare resultaten</span>
               </div>
             ))}
           </div>
