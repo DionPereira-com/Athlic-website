@@ -600,7 +600,7 @@ export default function App() {
               <motion.div {...fadeInUp} className="w-full lg:col-span-4 flex flex-col gap-4">
                 <div className="text-xs font-bold uppercase tracking-widest text-dark-navy/40 mb-2">Wat je mag verwachten</div>
                 {[
-                  { step: "01", title: "Gratis gesprek van 30 min", desc: "Geen verkooppraatje. We kijken samen naar jouw situatie en groeipotentie." },
+                  { step: "01", title: "Gratis gesprek van 45 min", desc: "Geen verkooppraatje. We kijken samen naar jouw situatie en groeipotentie." },
                   { step: "02", title: "Kansen direct helder", desc: "Je verlaat het gesprek met concrete inzichten over jouw kansen." },
                   { step: "03", title: "Geen verplichtingen", desc: "We werken alleen samen als er een duidelijke match is. Geen druk." },
                 ].map((item, i) => (
@@ -638,7 +638,7 @@ export default function App() {
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5" />
-                      30 minuten
+                      45 minuten
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5" />
