@@ -43,7 +43,7 @@ export default function App() {
     { name: 'Resultaat', href: '#resultaat' },
     { name: 'Aanpak', href: '#aanpak' },
     { name: 'Wat je krijgt', href: '#wat-je-krijgt' },
-    { name: 'Voor wie', href: '#voor-wie' },
+    { name: ' wie', href: '#voor-wie' },
     { name: 'FAQ', href: '#faq' },
     { name: '', href: '#' },
   ];
@@ -425,8 +425,15 @@ export default function App() {
         </section>
 
         {/* Voor wie Section */}
-        <section id="voor-wie" className="py-32 px-6 bg-dark-navy relative overflow-hidden">
-          <div className="max-w-[1200px] mx-auto relative z-10">
+<section id="voor-wie" className="py-32 px-6 bg-dark-navy relative overflow-hidden">
+
+  {/* Background image */}
+  <div className="absolute inset-0 z-0">
+    <img src="/voor-wie-bg.webp" className="w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-dark-navy/90" />
+  </div>
+
+  <div className="max-w-[1200px] mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div {...fadeInUp}>
                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">Voor wie is <br /> dit systeem?</h2>
