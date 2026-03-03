@@ -269,7 +269,7 @@ export default function App() {
                 </p>
               </motion.div>
               <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-                <a href="#contact" className="inline-flex items-center gap-2 font-bold text-coral hover:gap-4 transition-all">
+                <a href="#aanpak" className="inline-flex items-center gap-2 font-bold text-coral hover:gap-4 transition-all">
                   Bekijk onze aanpak <ArrowRight className="w-5 h-5" />
                 </a>
               </motion.div>
