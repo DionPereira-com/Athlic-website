@@ -431,7 +431,7 @@ export default function App() {
 
   {/* Background image */}
   <div className="absolute inset-0 z-0">
-    <img src="/voor-wie-bg2.webp" className="w-full h-full object-cover object-center" />
+    <img src="/voor-wie-bg3.webp" className="w-full h-full object-cover object-center" />
     <div className="absolute inset-0 bg-dark-navy/90" />
   </div>
 
