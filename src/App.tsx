@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, CheckCircle2, ArrowRight, ChevronDown, ChevronUp, XCircle, Target, Calendar } from 'lucide-react';
+import { Menu, X, CheckCircle2, ArrowRight, ChevronDown, ChevronUp, XCircle, Target } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const fadeInUp = {
