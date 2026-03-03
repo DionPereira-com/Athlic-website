@@ -49,7 +49,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-deep-navy text-light-gray font-sans selection:bg-coral selection:text-white">
+    <div className="min-h-screen bg-deep-navy text-light-gray font-sans selection:bg-coral selection:text-white overflow-x-hidden">
       {/* Header */}
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-deep-navy/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
         <div className="max-w-[1120px] mx-auto px-6 flex items-center justify-between">
