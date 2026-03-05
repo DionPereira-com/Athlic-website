@@ -428,13 +428,10 @@ export default function App() {
 
         {/* Voor wie Section */}
 <section id="voor-wie" className="py-32 px-6 bg-dark-navy relative overflow-hidden">
-
-  {/* Background image */}
   <div className="absolute inset-0 z-0">
     <img src="/voor-wie-bg3.webp" className="w-full h-full object-cover object-center" />
     <div className="absolute inset-0 bg-dark-navy/95" />
   </div>
-
   <div className="max-w-[1200px] mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div {...fadeInUp}>
@@ -558,11 +555,9 @@ export default function App() {
           </div>
         </section>
 
-{/* Contact Section */}
+        {/* Contact Section */}
         <section id="contact" className="py-32 px-6 bg-light-gray text-deep-navy">
           <div className="max-w-[1200px] mx-auto">
-
-            {/* Header */}
             <motion.div {...fadeInUp} className="text-center mb-16">
               <h2 className="text-4xl md:text-7xl font-bold tracking-tight mb-6">Plan de <br /> volgende stap.</h2>
               <p className="text-xl text-dark-navy/60 max-w-2xl mx-auto">
@@ -571,8 +566,6 @@ export default function App() {
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-
-              {/* Left: Photo + Bio card */}
               <motion.div {...fadeInUp} className="w-full lg:col-span-4 flex">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-black/5">
                   <div className="bg-gradient-to-br from-deep-navy to-dark-navy px-8 pt-8 pb-0 flex justify-center">
@@ -596,7 +589,6 @@ export default function App() {
                 </div>
               </motion.div>
 
-              {/* Middle: What to expect */}
               <motion.div {...fadeInUp} className="w-full lg:col-span-4 flex flex-col gap-4">
                 <div className="text-xs font-bold uppercase tracking-widest text-dark-navy/40 mb-2">Wat je mag verwachten</div>
                 {[
@@ -614,7 +606,6 @@ export default function App() {
                 ))}
               </motion.div>
 
-              {/* Right: CTA */}
               <motion.div {...fadeInUp} className="w-full lg:col-span-4">
                 <div className="bg-deep-navy p-8 rounded-[2.5rem] text-white flex flex-col w-full overflow-hidden">
                   <div className="text-xs font-bold uppercase tracking-widest text-white/40 mb-8">Klaar om te starten?</div>
@@ -647,7 +638,6 @@ export default function App() {
                   </div>
                 </div>
               </motion.div>
-
             </div>
           </div>
         </section>
@@ -679,6 +669,12 @@ export default function App() {
                 <ul className="space-y-2 text-sm text-medium-gray">
                   <li><a href="#" className="hover:text-coral transition-colors">Privacy Policy</a></li>
                   <li><a href="#" className="hover:text-coral transition-colors">Voorwaarden</a></li>
+                </ul>
+              </div>
+              <div>
+                <div className="text-white font-bold mb-4">Tools</div>
+                <ul className="space-y-2 text-sm text-medium-gray">
+                  <li><a href="/athlic-calculator.html" className="hover:text-coral transition-colors">Rendementscalculator</a></li>
                 </ul>
               </div>
             </div>
