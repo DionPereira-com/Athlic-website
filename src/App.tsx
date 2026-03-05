@@ -186,13 +186,13 @@ export default function App() {
                       <div className="text-3xl font-bold text-teal mb-1">HYROX</div>
                       <div className="text-xs text-medium-gray uppercase tracking-wider">Specialisatie</div>
                     </div>
-                    <div className="glass p-6 rounded-3xl border-white/10 aspect-square flex flex-col justify-end">
+                    <div className="glass p-6 rounded-3xl border-white/10 flex flex-col justify-end py-6">
                       <Target className="w-8 h-8 text-coral mb-4" />
                       <div className="text-lg font-bold">Lokaal <br />Bereik</div>
                     </div>
                   </div>
                   <div className="space-y-4 pt-8">
-                    <div className="glass p-6 rounded-3xl border-white/10 aspect-[4/5] flex flex-col justify-between">
+                    <div className="glass p-6 rounded-3xl border-white/10 flex flex-col justify-between">
                       <div className="flex items-end gap-1 h-16 w-full">
                         {[0.3, 0.5, 0.4, 0.7, 0.6, 0.9, 0.8, 1].map((h, i) => (
                           <motion.div
