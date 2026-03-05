@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rendementscalculator — Athlic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1A1A2E;
+    --navy2: #242440;
+    --red: #E94560;
+    --red-dim: rgba(233,69,96,0.12);
+    --white: #F0F0F0;
+    --gray: #B0B0B0;
+    --border: rgba(255,255,255,0.07);
+    --card: rgba(255,255,255,0.04);
+    --card-hover: rgba(255,255,255,0.07);
+    --teal: #16C79A;
+    --teal-dim: rgba(22,199,154,0.1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glow */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(233,69,96,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* NAV */
+  nav {
+    position: relative;
+    z-index: 10;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .logo span { color: var(--red); }
+
+  nav a.back {
+    font-size: 13px;
+    color: var(--gray);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  nav a.back:hover { color: var(--white); }
+
+  /* HERO */
+  .hero {
+    padding: 72px 0 48px;
+    text-align: center;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    border: 1px solid rgba(230,57,70,0.3);
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(36px, 6vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--red);
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: var(--gray);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* CALCULATOR */
+  .calc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .calc { grid-template-columns: 1fr; }
+  }
+
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: background 0.2s;
+  }
+
+  .panel:hover { background: var(--card-hover); }
+
+  .panel-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 28px;
+  }
+
+  .field { margin-bottom: 22px; }
+  .field:last-child { margin-bottom: 0; }
+
+  label {
+    display: block;
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  label strong {
+    display: block;
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .prefix {
+    position: absolute;
+    left: 14px;
+    font-size: 15px;
+    color: var(--gray);
+    pointer-events: none;
+    font-weight: 400;
+  }
+
+  .suffix {
+    position: absolute;
+    right: 14px;
+    font-size: 13px;
+    color: var(--gray);
+    pointer-events: none;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--red);
+    cursor: pointer;
+    box-shadow: 0 0 0 3px rgba(230,57,70,0.2);
+    transition: box-shadow 0.2s;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 6px rgba(230,57,70,0.25);
+  }
+
+  .range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 6px;
+  }
+
+  .val-display {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  /* RESULTS */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .results-grid { grid-template-columns: 1fr; }
+  }
+
+  .result-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .result-card.highlight {
+    background: var(--teal-dim);
+    border-color: rgba(22,199,154,0.2);
+  }
+
+  .result-card.warning {
+    background: var(--red-dim);
+    border-color: rgba(230,57,70,0.2);
+  }
+
+  .result-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .result-value {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .result-card.highlight .result-value { color: var(--teal); }
+  .result-card.warning .result-value { color: var(--red); }
+
+  .result-sub {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.4;
+  }
+
+  /* ROI BAR */
+  .roi-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+
+  .roi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  .roi-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .roi-number {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--teal);
+    line-height: 1;
+    transition: all 0.4s;
+  }
+
+  .roi-number.negative { color: var(--red); }
+
+  .bar-track {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--red), var(--teal));
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 4px;
+  }
+
+  /* MONTHS TABLE */
+  .months-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 48px;
+  }
+
+  .months-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 24px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: 500;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 12px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--white);
+    font-weight: 300;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  tr.positive td:last-child { color: var(--teal); font-weight: 500; }
+  tr.negative td:last-child { color: var(--red); font-weight: 500; }
+
+  td.month-num {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    color: var(--gray);
+    width: 60px;
+  }
+
+  /* CTA */
+  .cta {
+    text-align: center;
+    padding: 64px 0 80px;
+    border-top: 1px solid var(--border);
+  }
+
+  .cta h2 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .cta p {
+    color: var(--gray);
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    padding: 16px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn:hover {
+    background: #c73054;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(230,57,70,0.3);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  .freq-btns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .freq-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 8px 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--gray);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.18s;
+    text-align: center;
+  }
+
+  .freq-btn:hover { border-color: rgba(230,57,70,0.4); color: var(--white); }
+
+  .freq-btn.active {
+    background: var(--red-dim);
+    border-color: var(--red);
+    color: var(--white);
+    font-weight: 500;
+  }
+    animation: fadeUp 0.6s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-in:nth-child(2) { animation-delay: 0.1s; }
+  .animate-in:nth-child(3) { animation-delay: 0.2s; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a href="/" class="logo">ATH<span>L</span>IC</a>
+    <a href="/" class="back">← Terug naar home</a>
+  </nav>
+
+  <div class="hero animate-in">
+    <div class="tag">Rendementscalculator</div>
+    <h1>Wat levert Athlic<br><em>jouw sportschool</em> op?</h1>
+    <p>Vul jouw cijfers in en zie direct wat de investering in Athlic concreet betekent voor je omzet en winst.</p>
+  </div>
+
+  <!-- INPUTS -->
+  <div class="calc animate-in">
+
+    <div class="panel">
+      <div class="panel-title">Jouw sportschool</div>
+
+      <div class="field">
+        <label>
+          <strong>Betaalfrequentie lidmaatschap</strong>
+          Hoe betalen jouw leden gemiddeld?
+        </label>
+        <div class="freq-btns" id="freq-btns">
+          <button class="freq-btn" data-months="1">Per maand</button>
+          <button class="freq-btn active" data-months="3">Per kwartaal</button>
+          <button class="freq-btn" data-months="6">Per 6 mnd</button>
+          <button class="freq-btn" data-months="12">Per jaar</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>
+          <strong>Gemiddelde maandcontributie</strong>
+          Per betalend lid per maand
+        </label>
+        <div class="val-display" id="disp-contributie">€ 85</div>
+        <input type="range" id="contributie" min="40" max="250" step="5" value="85">
+        <div class="range-labels"><span>€40</span><span>€250</span></div>
+      </div>
+
+      <div class="field">
+        <label>
+          <strong>Gemiddelde lidmaatschapsduur</strong>
+          Hoeveel maanden blijft iemand lid?
+        </label>
+        <div class="val-display" id="disp-duur">14 maanden</div>
+        <input type="range" id="duur" min="3" max="36" step="1" value="14">
+        <div class="range-labels"><span>3 mnd</span><span>36 mnd</span></div>
+      </div>
+
+      <div class="field">
+        <label>
+          <strong>Conversie proeftraining → lid</strong>
+          Van 100 proeftrainingen, hoeveel worden lid?
+        </label>
+        <div class="val-display" id="disp-conversie">35%</div>
+        <input type="range" id="conversie" min="10" max="70" step="5" value="35">
+        <div class="range-labels"><span>10%</span><span>70%</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Groei via Athlic</div>
+
+      <div class="field">
+        <label>
+          <strong>Extra proeftrainingen per maand</strong>
+          Realistisch verwacht via Google Ads + GBP
+        </label>
+        <div class="val-display" id="disp-trials">12 per maand</div>
+        <input type="range" id="trials" min="2" max="40" step="1" value="12">
+        <div class="range-labels"><span>2</span><span>40</span></div>
+      </div>
+
+      <div class="field">
+        <label>
+          <strong>Maandelijks Ads-budget</strong>
+          Bovenop het Athlic-retainer (€1.750/mnd)
+        </label>
+        <div class="val-display" id="disp-ads">€ 800</div>
+        <input type="range" id="ads" min="200" max="3000" step="100" value="800">
+        <div class="range-labels"><span>€200</span><span>€3.000</span></div>
+      </div>
+
+      <div class="field">
+        <label>
+          <strong>Churn-verbetering door reviews & nurture</strong>
+          Verwachte verlenging gemiddelde duur (in maanden)
+        </label>
+        <div class="val-display" id="disp-churn">+2 maanden</div>
+        <input type="range" id="churn" min="0" max="12" step="1" value="2">
+        <div class="range-labels"><span>0</span><span>+12 mnd</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY METRICS -->
+  <div class="results-grid animate-in">
+    <div class="result-card">
+      <div class="result-label">Klantwaarde (CLV)</div>
+      <div class="result-value" id="clv">€ —</div>
+      <div class="result-sub">Omzet per lid over volledige duur</div>
+    </div>
+    <div class="result-card">
+      <div class="result-label">Nieuwe leden / maand</div>
+      <div class="result-value" id="new-members">—</div>
+      <div class="result-sub">Via extra proeftrainingen</div>
+    </div>
+    <div class="result-card">
+      <div class="result-label">Break-even in</div>
+      <div class="result-value" id="breakeven">— mnd</div>
+      <div class="result-sub">Maanden t/m terugverdienen setup (incl. €2.500)</div>
+    </div>
+  </div>
+
+  <!-- ROI PANEL -->
+  <div class="roi-panel animate-in">
+    <div class="roi-header">
+      <div>
+        <div class="roi-title">ROI na <span id="roi-period">12</span> maanden</div>
+        <div style="color:var(--gray);font-size:13px;margin-top:4px;">Totale opbrengst minus totale investering (incl. €2.500 setup)</div>
+      </div>
+      <div class="roi-number" id="roi-pct">+0%</div>
+    </div>
+    <div class="bar-track">
+      <div class="bar-fill" id="roi-bar" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- MAANDEN TABEL -->
+  <div class="months-panel animate-in">
+    <div class="months-title">Opbrengst per maand — overzicht <span id="table-period">12</span> maanden</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Mnd</th>
+          <th>Nieuwe leden</th>
+          <th>Extra omzet (maand)</th>
+          <th>Totale investering</th>
+          <th>Cumulatief resultaat</th>
+        </tr>
+      </thead>
+      <tbody id="months-table"></tbody>
+    </table>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta animate-in">
+    <h2>Klaar om te starten?</h2>
+    <p>We bespreken jouw situatie, kijken waar de kansen liggen, en of ons systeem past bij jouw gym.</p>
+    <button class="btn" data-cal-link="athlic/kennismakingsgesprek" data-cal-namespace="kennismakingsgesprek" data-cal-config='{"layout":"month_view"}'>Plan een gratis gesprek →</button>
+  </div>
+
+  <footer>
+    <span>© 2026 Athlic</span>
+  </footer>
+</div>
+
+<script>
+  const inputs = {
+    contributie: document.getElementById('contributie'),
+    duur:        document.getElementById('duur'),
+    conversie:   document.getElementById('conversie'),
+    trials:      document.getElementById('trials'),
+    ads:         document.getElementById('ads'),
+    churn:       document.getElementById('churn'),
+  };
+
+  // Betaalfrequentie buttons
+  let freqMonths = 3; // standaard kwartaal
+  document.querySelectorAll('.freq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      freqMonths = +btn.dataset.months;
+      calc();
+    });
+  });
+
+  const fmt = (n, prefix='€') => prefix + Math.round(n).toLocaleString('nl-NL');
+
+  function calc() {
+    const contributie = +inputs.contributie.value;
+    const duur        = +inputs.duur.value;
+    const conversie   = +inputs.conversie.value / 100;
+    const trials      = +inputs.trials.value;
+    const ads         = +inputs.ads.value;
+    const churn       = +inputs.churn.value;
+
+    // Update displays
+    document.getElementById('disp-contributie').textContent = fmt(contributie);
+    document.getElementById('disp-duur').textContent        = duur + ' maanden';
+    document.getElementById('disp-conversie').textContent   = (conversie * 100) + '%';
+    document.getElementById('disp-trials').textContent      = trials + ' per maand';
+    document.getElementById('disp-ads').textContent         = fmt(ads);
+    document.getElementById('disp-churn').textContent       = '+' + churn + ' maanden';
+
+    const effectiveDuur = duur + churn;
+    const clv           = contributie * effectiveDuur;
+    const newPerMonth   = Math.round(trials * conversie * 10) / 10;
+    const monthlyRetainer = 1750;
+    const setupFee      = 2500;
+    const monthlyInvest = monthlyRetainer + ads;
+
+    // Betaling per termijn: contributie × freqMonths wordt vooruit ontvangen
+    const paymentPerMember = contributie * freqMonths;
+
+    // Dynamische ROI-periode
+    const roiPeriod = effectiveDuur <= 12 ? 12 : 24;
+    document.getElementById('roi-period').textContent = roiPeriod;
+    document.getElementById('table-period').textContent = roiPeriod;
+
+    // Cumulatieve cash flow op basis van betaalfrequentie
+    // Een nieuw lid betaalt freqMonths × contributie vooruit bij aanvang,
+    // daarna elke freqMonths weer. Cash flow is dus in blokken.
+    function cashFlowAtMonth(M) {
+      // Hoeveel cash ontvangen in maand M van leden verworven in maand n?
+      let cash = 0;
+      for (let n = 1; n <= M; n++) {
+        const age = M - n + 1; // maanden actief inclusief startmaand
+        // Lid betaalt op moment n, n+freqMonths, n+2*freqMonths, ... zolang age <= effectiveDuur
+        // Check of maand M een betaalmoment is voor dit lid
+        const termijn = age; // age = M - n + 1, startbetaling op age=1
+        if (termijn >= 1 && (termijn - 1) % freqMonths === 0 && termijn <= effectiveDuur) {
+          // Hoeveel maanden dekt deze betaling? Min van freqMonths en resterende duur
+          const remaining = effectiveDuur - termijn + 1;
+          const betaling = contributie * Math.min(freqMonths, remaining);
+          cash += newPerMonth * betaling;
+        }
+      }
+      return cash;
+    }
+
+    function cumulativeCashFlow(M) {
+      let total = -setupFee;
+      for (let m = 1; m <= M; m++) {
+        total += cashFlowAtMonth(m) - monthlyInvest;
+      }
+      return total;
+    }
+
+    // Break-even
+    let be = '—';
+    for (let m = 1; m <= 60; m++) {
+      if (cumulativeCashFlow(m) >= 0) { be = m; break; }
+    }
+
+    // CLV display
+    document.getElementById('clv').textContent         = fmt(clv);
+    document.getElementById('new-members').textContent = newPerMonth.toFixed(1).replace('.',',');
+    document.getElementById('breakeven').textContent   = be === '—' ? '> 60 mnd' : be + ' mnd';
+
+    // ROI over dynamische periode
+    const cashROI = cumulativeCashFlow(roiPeriod);
+    const costROI = setupFee + monthlyInvest * roiPeriod;
+    const roi     = costROI > 0 ? (cashROI / costROI) * 100 : 0;
+
+    const roiEl = document.getElementById('roi-pct');
+    roiEl.textContent = (roi >= 0 ? '+' : '') + Math.round(roi) + '%';
+    roiEl.className = 'roi-number' + (roi < 0 ? ' negative' : '');
+
+    const barPct = Math.min(Math.max((roi + 50) / 250 * 100, 2), 100);
+    document.getElementById('roi-bar').style.width = barPct + '%';
+
+    // Tabel
+    const tbody = document.getElementById('months-table');
+    tbody.innerHTML = '';
+    let cumProfit = -setupFee;
+    for (let m = 1; m <= roiPeriod; m++) {
+      const monthCash = cashFlowAtMonth(m);
+      cumProfit += monthCash - monthlyInvest;
+      const isPos = cumProfit >= 0;
+      const tr = document.createElement('tr');
+      tr.className = isPos ? 'positive' : 'negative';
+      tr.innerHTML = `
+        <td class="month-num">${m}</td>
+        <td>${newPerMonth.toFixed(1).replace('.',',')} leden</td>
+        <td>${fmt(monthCash)}</td>
+        <td>${fmt(monthlyInvest)}</td>
+        <td>${cumProfit >= 0 ? '+' : ''}${fmt(cumProfit, '')}${cumProfit >= 0 ? ' \u2713' : ''}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  }
+
+  Object.values(inputs).forEach(el => el.addEventListener('input', calc));
+  calc();
+</script>
+
+<script type="text/javascript">
+  (function (C, A, L) {
+    let p = function (a, ar) { a.q.push(ar); };
+    let d = C.document;
+    C.Cal = C.Cal || function () {
+      let cal = C.Cal; let ar = arguments;
+      if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; }
+      if (ar[0] === L) {
+        const api = function () { p(api, arguments); };
+        const namespace = ar[1]; api.q = api.q || [];
+        if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, [L, namespace, ar[2]]); }
+        else { p(cal, ar); } return;
+      } p(cal, ar);
+    };
+  })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "kennismakingsgesprek", { origin: "https://cal.eu" });
+  Cal.ns.kennismakingsgesprek("ui", {
+    styles: { branding: { brandColor: "#E94560" } },
+    hideEventTypeDetails: false,
+    layout: "month_view"
+  });
+</script>
+</body>
+</html>
