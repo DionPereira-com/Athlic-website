@@ -644,49 +644,95 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-deep-navy pt-20 pb-10 px-6 border-t border-white/5 relative">
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-coral via-[#8B2E3E] to-[#4A2C2C]"></div>
+      <footer className="bg-deep-navy border-t border-white/10 px-6 py-16">
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-            <div>
-              <div className="text-3xl font-bold tracking-tighter text-white mb-4">ATHLIC.</div>
-              <p className="text-medium-gray max-w-xs">
-                Vindbaarheid en instroom voor de performance fitness industrie.
+
+          {/* Top row: logo + tagline */}
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-12 mb-12">
+            <div className="max-w-xs">
+              <div className="font-bold text-2xl tracking-tight text-white mb-3">Athlic</div>
+              <p className="text-white/40 text-sm leading-relaxed">
+                Voorspelbare instroom van proefleden voor HYROX en performance gyms.
               </p>
             </div>
-            
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
+
+            {/* Link columns */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-10">
+
+              {/* Navigatie */}
               <div>
-                <div className="text-white font-bold mb-4">Navigatie</div>
-                <ul className="space-y-2 text-sm text-medium-gray">
-                  <li><a href="#resultaat" className="hover:text-coral transition-colors">Resultaat</a></li>
-                  <li><a href="#aanpak" className="hover:text-coral transition-colors">Aanpak</a></li>
-                  <li><a href="#contact" className="hover:text-coral transition-colors">Contact</a></li>
+                <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">Navigatie</p>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="/#aanpak" className="text-sm text-white/60 hover:text-white transition-colors">
+                      Aanpak
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/#aanbod" className="text-sm text-white/60 hover:text-white transition-colors">
+                      Ons aanbod
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/#contact"
+                      data-cal-namespace="kennismakingsgesprek"
+                      data-cal-link="athlic/kennismakingsgesprek"
+                      data-cal-config='{"layout":"month_view"}'
+                      className="text-sm text-white/60 hover:text-white transition-colors"
+                    >
+                      Plan een gesprek
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/contact" className="text-sm text-white/60 hover:text-white transition-colors">
+                      Contact opnemen
+                    </a>
+                  </li>
                 </ul>
               </div>
+
+              {/* Legal */}
               <div>
-                <div className="text-white font-bold mb-4">Legal</div>
-                <ul className="space-y-2 text-sm text-medium-gray">
-                  <li><a href="#" className="hover:text-coral transition-colors">Privacy Policy</a></li>
-                  <li><a href="#" className="hover:text-coral transition-colors">Voorwaarden</a></li>
+                <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">Legal</p>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="/privacybeleid" className="text-sm text-white/60 hover:text-white transition-colors">
+                      Privacybeleid
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/cookiebeleid" className="text-sm text-white/60 hover:text-white transition-colors">
+                      Cookiebeleid
+                    </a>
+                  </li>
                 </ul>
               </div>
+
+              {/* Tools */}
               <div>
-                <div className="text-white font-bold mb-4">Tools</div>
-                <ul className="space-y-2 text-sm text-medium-gray">
-                  <li><a href="/athlic-calculator.html" className="hover:text-coral transition-colors">Rendementscalculator</a></li>
+                <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">Tools</p>
+                <ul className="space-y-3">
+                  <li>
+                    <a
+                      href="/athlic-calculator.html"
+                      className="text-sm text-white/60 hover:text-white transition-colors"
+                    >
+                      Rendementscalculator
+                    </a>
+                  </li>
                 </ul>
               </div>
+
             </div>
           </div>
-          
-          <div className="mt-20 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-medium-gray/50 uppercase tracking-widest">
-            <div>© 2026 Athlic. Alle rechten voorbehouden.</div>
-            <div className="flex items-center gap-4">
-              <span>Google Partner</span>
-              <span>Performance Gym Specialist</span>
-            </div>
+
+          {/* Bottom row */}
+          <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/25">
+            <p>© 2026 Athlic. KvK 66050936.</p>
+            <p>Gevestigd in Oosterhout, Nederland.</p>
           </div>
+
         </div>
       </footer>
     </div>
