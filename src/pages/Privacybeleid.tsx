@@ -29,7 +29,7 @@ export default function PrivacybeleidPage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
               Privacybeleid
             </h1>
-            <p className="text-white/40 text-sm">Versie 1.0 – maart 2026</p>
+            <p className="text-white/40 text-sm">Versie 1.0 â maart 2026</p>
           </div>
 
           {/* Body */}
@@ -105,7 +105,7 @@ export default function PrivacybeleidPage() {
                 </div>
                 <div>
                   <dt className="font-semibold text-white">E-mailcommunicatie</dt>
-                  <dd className="text-white/60 mt-1">Om relevante informatie te sturen aan geïnteresseerden die zich hebben aangemeld via onze e-mailmarketingtool.</dd>
+                  <dd className="text-white/60 mt-1">Om relevante informatie te sturen aan geÃ¯nteresseerden die zich hebben aangemeld via onze e-mailmarketingtool.</dd>
                 </div>
               </dl>
             </Section>
@@ -115,7 +115,7 @@ export default function PrivacybeleidPage() {
               <dl className="space-y-4 mt-4">
                 <div>
                   <dt className="font-semibold text-white">Toestemming</dt>
-                  <dd className="text-white/60 mt-1">Voor het plaatsen van analytische en marketingcookies — je geeft toestemming via de cookiebanner.</dd>
+                  <dd className="text-white/60 mt-1">Voor het plaatsen van analytische en marketingcookies â je geeft toestemming via de cookiebanner.</dd>
                 </div>
                 <div>
                   <dt className="font-semibold text-white">Uitvoering van een overeenkomst</dt>
@@ -134,11 +134,11 @@ export default function PrivacybeleidPage() {
               <div className="mt-4 space-y-3">
                 {[
                   { name: 'Cal.com', desc: 'Boekingssysteem voor gesprekken.', url: 'cal.com/privacy' },
-                  { name: 'Google LLC', desc: 'Google Ads en Google Analytics. Google is aangesloten bij het EU-VS Data Privacy Framework.', url: 'policies.google.com/privacy' },
+                  { name: 'Google LLC', desc: 'Google Ads en Google Analytics. Google is aangesloten bij het EU-VS maar aangesloten bij het EU-VS Data Privacy Framework.', url: 'policies.google.com/privacy' },
                   { name: 'LinkedIn Ireland Unlimited Company', desc: 'LinkedIn Ads.', url: 'linkedin.com/legal/privacy-policy' },
                   { name: 'LeadInfo B.V.', desc: 'Identificatie van bedrijfsbezoeken op basis van IP-adres.', url: 'leadinfo.com/privacy' },
                   { name: 'E-mailmarketingtool', desc: 'Voor het versturen van e-mailcommunicatie aan aangemelde contacten.', url: null },
-                  { name: 'CRM-systeem', desc: 'Voor het beheren van klant- en prospectinformatie.', url: null },
+                  { name: 'CRM-s-systeem', desc: 'Voor het beheren van klant- en prospectinformatie.', url: null },
                 ].map((p) => (
                   <div key={p.name} className="bg-white/5 rounded-xl p-4">
                     <p className="font-semibold text-white text-sm">{p.name}</p>
@@ -197,7 +197,7 @@ export default function PrivacybeleidPage() {
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 mt-20">
         <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
-          <p>© 2026 Athlic. KvK 66050936.</p>
+          <p>Â© 2026 Athlic. KvK 66050936.</p>
           <div className="flex gap-6">
             <a href="/privacybeleid" className="hover:text-white transition-colors">Privacybeleid</a>
             <a href="/cookiebeleid" className="hover:text-white transition-colors">Cookiebeleid</a>

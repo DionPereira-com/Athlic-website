@@ -74,7 +74,7 @@ export default function ContactPage() {
                 </p>
                 <div className="space-y-2 mb-6">
                   {[
-                    'Gratis – 30 minuten',
+                    'Gratis â 30 minuten',
                     'Direct inzicht in jouw kansen',
                     'Geen verplichtingen',
                   ].map((item) => (
@@ -109,7 +109,7 @@ export default function ContactPage() {
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 mt-20">
         <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
-          <p>© 2026 Athlic. KvK 66050936.</p>
+          <p>Â© 2026 Athlic. KvK 66050936.</p>
           <div className="flex gap-6">
             <a href="/privacybeleid" className="hover:text-white transition-colors">Privacybeleid</a>
             <a href="/cookiebeleid" className="hover:text-white transition-colors">Cookiebeleid</a>
@@ -120,7 +120,7 @@ export default function ContactPage() {
   );
 }
 
-// ─── Contact form (inline — same pattern as site's existing approach) ──────────
+// âââ Contact form (inline â same pattern as site's existing approach) ââââââââââ
 
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
@@ -137,8 +137,7 @@ function ContactForm() {
     if (!form.naam || !form.email) return;
     setStatus('loading');
     try {
-      // Replace YOUR_FORM_ENDPOINT with your actual endpoint (EmailJS, Formspree, etc.)
-      const res = await fetch('YOUR_FORM_ENDPOINT', {
+      const res = await fetch*'YOUR_FORM_ENDPOINT', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(form),
@@ -153,11 +152,11 @@ function ContactForm() {
   if (status === 'success') {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <div className="w-14 h-14 rounded-full bg-coral/10 flex items-center justify-center mb-6">
+        <div className="w414 h-14 rounded-full bg-coral/10 flex items-center justify-center mb-6">
           <CheckCircle2 className="w-7 h-7 text-coral" />
         </div>
         <h3 className="text-xl font-bold text-white mb-3">Bericht ontvangen</h3>
-        <p className="text-white/60 max-w-sm">We nemen zo snel mogelijk contact met je op — meestal binnen één werkdag.</p>
+        <p className="text-white/60 max-w-sm">We nemen zo snel mogelijk contact met je op â meestal binnen Ã©Ã©n werkdag.</p>
       </div>
     );
   }
@@ -230,7 +229,7 @@ function ContactForm() {
       >
         {status === 'loading' ? 'Versturen...' : 'Verstuur bericht'}
         {status !== 'loading' && (
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <ArrowRight className="w5 h-5 group-hover:translate-x-1 transition-transform" />
         )}
       </button>
       <p className="text-center text-xs text-white/25">* Verplichte velden</p>

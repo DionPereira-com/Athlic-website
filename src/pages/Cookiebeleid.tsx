@@ -29,7 +29,7 @@ export default function CookiebeleidPage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
               Cookiebeleid
             </h1>
-            <p className="text-white/40 text-sm">Versie 1.0 – maart 2026</p>
+            <p className="text-white/40 text-sm">Versie 1.0 â maart 2026</p>
           </div>
 
           {/* Body */}
@@ -91,7 +91,7 @@ export default function CookiebeleidPage() {
             <Section title="3. Toestemming en beheer">
               <p>Bij jouw eerste bezoek aan athlic.io tonen wij een cookiebanner waarmee je toestemming kunt geven voor analytische cookies en marketingcookies. Functionele cookies worden altijd geplaatst en vereisen geen toestemming.</p>
               <p>Je kunt jouw voorkeur op elk moment wijzigen via de cookiebanner in de footer van de website.</p>
-              <p>Daarnaast kun je cookies verwijderen en beheren via de instellingen van jouw browser. Het uitschakelen van bepaalde cookies kan de werking van de website beïnvloeden.</p>
+              <p>Daarnaast kun je cookies verwijderen en beheren via de instellingen van jouw browser. Het uitschakelen van bepaalde cookies kan de werking van de website beÃ¯nvloeden.</p>
             </Section>
 
             <Section title="4. Cookies beheren via jouw browser">
@@ -135,7 +135,7 @@ export default function CookiebeleidPage() {
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 mt-20">
         <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
-          <p>© 2026 Athlic. KvK 66050936.</p>
+          <p>Â© 2026 Athlic. KvK 66050936.</p>
           <div className="flex gap-6">
             <a href="/privacybeleid" className="hover:text-white transition-colors">Privacybeleid</a>
             <a href="/cookiebeleid" className="hover:text-white transition-colors">Cookiebeleid</a>
