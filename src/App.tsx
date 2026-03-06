@@ -69,7 +69,7 @@ export default function App() {
               ))}
             </ul>
             <div className="flex items-center gap-4">
-              <a href="#" className="bg-coral hover:bg-coral/90 text-white text-sm font-semibold py-2.5 px-5 rounded-lg transition-all shadow-[0_4px_14px_0_rgba(233,69,96,0.39)] hover:shadow-[0_6px_20px_rgba(233,69,96,0.23)]">
+              <a href="#contact" className="bg-coral hover:bg-coral/90 text-white text-sm font-semibold py-2.5 px-5 rounded-lg transition-all shadow-[0_4px_14px_0_rgba(233,69,96,0.39)] hover:shadow-[0_6px_20px_rgba(233,69,96,0.23)]">
                 Plan Een Gesprek
               </a>
             </div>
