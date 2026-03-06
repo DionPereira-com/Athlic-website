@@ -45,7 +45,7 @@ export default function App() {
     { name: 'Wat je krijgt', href: '#wat-je-krijgt' },
     { name: ' wie', href: '#voor-wie' },
     { name: 'FAQ', href: '#faq' },
-    { name: '', href: '#' },
+    { name: '', href: '#contact' },
   ];
 
   return (
