@@ -42,8 +42,8 @@ export default function App() {
   const navLinks = [
     { name: 'Resultaat', href: '#resultaat' },
     { name: 'Aanpak', href: '#aanpak' },
-    { name: 'Wat je krijgt', href: '#wat-je-krijgt' },
-    { name: ' wie', href: '#voor-wie' },
+    { name: 'Aanbod', href: '#aanbod' },
+    { name: 'Voor wie', href: '#voor-wie' },
     { name: 'FAQ', href: '#faq' },
     { name: '', href: '#contact' },
   ];
@@ -383,7 +383,7 @@ export default function App() {
         </section>
 
         {/* Wat je krijgt Section - Creative Grid */}
-        <section id="wat-je-krijgt" className="py-32 px-6 bg-white text-deep-navy">
+        <section id="aanbod" className="py-32 px-6 bg-white text-deep-navy">
           <div className="max-w-[1200px] mx-auto">
             <motion.div {...fadeInUp} className="text-center mb-20">
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Wat we bouwen</h2>
