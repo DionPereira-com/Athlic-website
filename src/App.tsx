@@ -652,7 +652,7 @@ export default function App() {
             <div className="max-w-xs">
               <div className="font-bold text-2xl tracking-tight text-white mb-3">Athlic</div>
               <p className="text-white/40 text-sm leading-relaxed">
-                Voorspelbare instroom van proefleden voor HYROX en performance gyms.
+                Voorspelbare instroom van proefleden voor HYROX en performance gyms. Van klik tot lid.
               </p>
             </div>
 
@@ -729,8 +729,7 @@ export default function App() {
 
           {/* Bottom row */}
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/25">
-            <p>© 2026 Athlic. KvK 66050936.</p>
-            <p>Gevestigd in Oosterhout, Nederland.</p>
+            <p>© 2026 Athlic</p>
           </div>
 
         </div>
