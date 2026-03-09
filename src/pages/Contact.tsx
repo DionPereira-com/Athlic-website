@@ -120,7 +120,7 @@ export default function ContactPage() {
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 mt-20">
         <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
-          <p>Â© 2026 Athlic. KvK 66050936.</p>
+          <p>© 2026 Athlic</p>
           <div className="flex gap-6">
             <a href="/privacybeleid" className="hover:text-white transition-colors">Privacybeleid</a>
             <a href="/cookiebeleid" className="hover:text-white transition-colors">Cookiebeleid</a>
