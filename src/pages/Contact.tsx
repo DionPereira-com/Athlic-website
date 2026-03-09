@@ -85,7 +85,7 @@ export default function ContactPage() {
                 </p>
                 <div className="space-y-2 mb-6">
                   {[
-                    'Gratis – 30 minuten',
+                    'Gratis gesprek van 45 min',
                     'Direct inzicht in jouw kansen',
                     'Geen verplichtingen',
                   ].map((item) => (
@@ -95,12 +95,14 @@ export default function ContactPage() {
                     </div>
                   ))}
                 </div>
-                <a
-                  href="/#contact"
-                  className="block w-full bg-coral hover:bg-coral/90 text-white font-bold py-4 px-6 rounded-2xl transition-all text-center text-sm"
+                <button
+                  data-cal-link="athlic/kennismakingsgesprek"
+                  data-cal-namespace="kennismakingsgesprek"
+                  data-cal-config='{"layout":"month_view"}'
+                  className="block w-full bg-coral hover:bg-coral/90 text-white font-bold py-4 px-6 rounded-2xl transition-all text-center text-sm cursor-pointer"
                 >
                   Plan een gesprek
-                </a>
+                </button>
               </div>
             </div>
 
@@ -201,7 +203,7 @@ function ContactForm() {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
         <div className="w-14 h-14 rounded-full bg-coral/10 flex items-center justify-center mb-6">
-          <CheckCircle2 className="w7 h-7 text-coral" />
+          <CheckCircle2 className="w-7 h-7 text-coral" />
         </div>
         <h3 className="text-xl font-bold text-white mb-3">Bericht ontvangen</h3>
         <p className="text-white/60 max-w-sm">
