@@ -120,7 +120,7 @@ export default function ContactPage() {
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 mt-20">
         <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
-          <p>© 2026 Athlic. KvK 66050936.</p>
+          <p>Â© 2026 Athlic. KvK 66050936.</p>
           <div className="flex gap-6">
             <a href="/privacybeleid" className="hover:text-white transition-colors">Privacybeleid</a>
             <a href="/cookiebeleid" className="hover:text-white transition-colors">Cookiebeleid</a>
@@ -131,7 +131,7 @@ export default function ContactPage() {
   );
 }
 
-// ─── Contact form ────────────────────────────────────────────────────────────
+// âââ Contact form ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 const MAILERLITE_API_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmNlZTdlYTJkZWVmMWZjYjc3ZWQ2M2IyMTFmMjA1OGNkYjg3MjcyYTU4ODU1ODdlNDgzMDgzNDU4MDBhOTIzMTY2ZTk2ZWQ5Y2ZlOWQ3MjIiLCJpYXQiOjE3NzMwNDMxODUuNTgxNjcyLCJuYmYiOjE3NzMwNDMxODUuNTgxNjc1LCJleHAiOjQ5Mjg3MTY3ODUuNTc3NjY1LCJzdWIiOiIyMTkzMDA1Iiwic2NvcGVzIjpbXX0.FUg_ySBFU7dIsFcVy_4gdVsdJXUj4_lez_aB__ASS18IP_hynh5G3JCQBPC7NoHNLr8gOLCHteCI1k0SeZfB1qCs6fzCBi3IOxbpoFQF-CQoHB1V7XnOtWY97HrEkc6a_fAqqAsMVqVbRXUV1L-7Y-_DpPPjnS91AP_axQzBmYT_FyTSe-HV6UXwhCDn5By-tfQMPNlZ4RZvniJFFfbfcI-kvolHtVn296ldwHuA8uwx8Pvr7kSONZy_LxApbVc3L_qOpTImSJQQod8bVA1XEWLMY4uYpM5r4j7ohmi7-_sQKfi8ILc2xtDrQ6pL2BtYflU9879fCmONuon2Ig9NON3HMKQbGBYPPows8OAywsp9LXitV5TKtWFydtJ5kkkPF7HiWUlJbPGlkXR5s0VucKcPhpoHfxkIt9owO_ftI0ecUSXk-RARN_KGyyG7DCpP6CmRk2yaTcI72yKXlh5LsF2aRZg8KwjMrjMyesixhqX4GD37Gn6VtOrV_KGfdAC053ErXDEpkXbqr2nJb4_wmNhnFHdYjuPnWP4-p27FRxI2yg_IHrKAlpd4pY5_e80PEVH7c_cmpWUMkPXl0q9IXEUthw6aQIul8OvZMURc7zF4G-zOwHu2BTudYg5t4a3mXLjfv0k82wMvQMPdDZ58ZqjYCmJ_hchcAP5KXrMFW0Y';
 
@@ -207,7 +207,7 @@ function ContactForm() {
         </div>
         <h3 className="text-xl font-bold text-white mb-3">Bericht ontvangen</h3>
         <p className="text-white/60 max-w-sm">
-          We nemen zo snel mogelijk contact met je op – meestal binnen één werkdag.
+          We nemen zo snel mogelijk contact met je op â meestal binnen Ã©Ã©n werkdag.
         </p>
       </div>
     );
@@ -322,7 +322,7 @@ function ContactForm() {
       <button
         onClick={handleSubmit}
         disabled={status === 'loading'}
-        className="group w-full bg-coral hover:bg-coral/90 disabled:opacity-40 text-white font-bold py-5 rounded-2xl transition-all shadow-lg flex items-center justify-center gap-3"
+        className="group w-full bg-coral hover:bg-coral/90 disabled:opacity-40 text-white font-bold py-5 rounded-2xl transition-all shadow-lg flex items-center justify-center gap-3 cursor-pointer"
       >
         {status === 'loading' ? 'Versturen...' : 'Verstuur bericht'}
         {status !== 'loading' && (
