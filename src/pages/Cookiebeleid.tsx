@@ -29,7 +29,7 @@ export default function CookiebeleidPage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
               Cookiebeleid
             </h1>
-            <p className="text-white/40 text-sm">Versie 1.0 â maart 2026</p>
+            <p className="text-white/40 text-sm">Versie 1.0 maart 2026</p>
           </div>
 
           {/* Body */}
