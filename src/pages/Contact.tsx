@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { ArrowLeft, ArrowRight, Mail, MapPin, Phone, CheckCircle2 } from 'lucide-react';
 
 const WEB3FORMS_KEY = '08235afe-dfd2-4c61-a761-f9cc20e01b40';
-const BREVO_API_KEY = import.meta.env.VITE_BREVO_API_KEY as string;
-const BREVO_LIST_ID = 3;
 
 export default function ContactPage() {
   return (
@@ -185,27 +183,6 @@ function ContactForm() {
         body: web3Payload,
       });
 
-      // 2. Brevo — voegt contact toe aan lijst
-      const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'api-key': BREVO_API_KEY,
-        },
-        body: JSON.stringify({
-          email: form.email,
-          attributes: {
-            FIRSTNAME: form.voornaam,
-            LASTNAME: form.achternaam || undefined,
-            SMS: form.telefoon || undefined,
-            COMPANY: form.bedrijfsnaam || undefined,
-          },
-          listIds: [BREVO_LIST_ID],
-          updateEnabled: true,
-        }),
-      });
-
-      // Succes als Web3Forms werkt (Brevo is bonus)
       if (web3Res.ok) {
         setStatus('success');
       } else {
