@@ -670,7 +670,29 @@ export default function App() {
           {/* Top row: logo + tagline */}
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-12 mb-12">
             <div className="max-w-xs">
-              <div className="font-bold text-2xl tracking-tight text-white mb-3">Athlic</div>
+              <div className="flex flex-col items-start mb-3">
+  <span
+    style={{
+      fontFamily: "'Barlow Condensed', sans-serif",
+      fontWeight: 800,
+      fontSize: '22px',
+      letterSpacing: '0.06em',
+      lineHeight: 1,
+    }}
+  >
+    <span style={{ color: '#E94560' }}>A</span>
+    <span className="text-white">THLIC</span>
+  </span>
+  <span
+    style={{
+      display: 'block',
+      height: '2px',
+      background: '#16C79A',
+      width: '100%',
+      marginTop: '4px',
+    }}
+  />
+</div>
               <p className="text-white/40 text-sm leading-relaxed">
                 Voorspelbare instroom van proefleden voor HYROX en performance gyms. Van klik tot lid.
               </p>
