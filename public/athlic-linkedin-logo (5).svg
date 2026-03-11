@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" style="position: fixed; top: 20px; left: 20px; z-index: 99999;">
+  <defs>
+    <style>@font-face { font-family: 'BarlowC'; font-weight: 600; src: url('data:font/woff2;base64,undefined') format('woff2'); }</style>
+  </defs>
+  <rect width="400" height="400" fill="#1A1A2E"/>
+  <rect x="0" y="352" width="400" height="48" fill="#16C79A"/>
+  <text x="194" y="285" text-anchor="middle" font-family="BarlowC, sans-serif" font-weight="600" font-size="260" fill="#E94560">A</text>
+</svg>
