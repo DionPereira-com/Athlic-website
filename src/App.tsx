@@ -64,7 +64,7 @@ export default function App() {
                   }}
                 >
                   <span style={{ color: '#E94560' }}>A</span>
-                  <span className={isScrolled ? 'text-deep-navy' : 'text-light-gray'}>THLIC</span>
+                  <span className="text-light-gray">THLIC</span>
                 </span>
                 <span
                   style={{
