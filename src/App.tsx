@@ -53,9 +53,29 @@ export default function App() {
       {/* Header */}
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-deep-navy/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'}`}>
         <div className="max-w-[1120px] mx-auto px-6 flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold tracking-wider text-light-gray">
-            ATHLIC
-          </a>
+          <a href="#" className="flex flex-col items-start group">
+                <span
+                  style={{
+                    fontFamily: "'Barlow Condensed', sans-serif",
+                    fontWeight: 800,
+                    fontSize: '28px',
+                    letterSpacing: '0.06em',
+                    lineHeight: 1,
+                  }}
+                >
+                  <span style={{ color: '#E94560' }}>A</span>
+                  <span className={isScrolled ? 'text-deep-navy' : 'text-light-gray'}>THLIC</span>
+                </span>
+                <span
+                  style={{
+                    display: 'block',
+                    height: '3px',
+                    background: '#16C79A',
+                    width: '100%',
+                    marginTop: '4px',
+                  }}
+                />
+              </a>
           
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
