@@ -599,7 +599,7 @@ export default function App() {
                     <div className="font-bold text-xl text-deep-navy">Dion Pereira</div>
                     <div className="text-coral text-sm font-semibold uppercase tracking-widest mb-4">Oprichter, Athlic</div>
                     <p className="text-dark-navy/60 text-sm leading-relaxed">
-                      10+ jaar ervaring in Google Ads en online vindbaarheid. Gespecialiseerd in HYROX en performance gyms.
+                      12+ jaar ervaring in Google Ads en online vindbaarheid. Gespecialiseerd in HYROX en performance gyms.
                     </p>
                     <div className="mt-6 pt-6 border-t border-black/5 flex items-center gap-2 text-sm text-dark-navy/50">
                       <div className="w-2 h-2 bg-teal rounded-full animate-pulse"></div>
