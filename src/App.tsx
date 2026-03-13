@@ -493,61 +493,27 @@ export default function App() {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section id="faq" className="py-32 px-6 bg-light-gray text-deep-navy">
-          <div className="max-w-[1000px] mx-auto">
-            <div className="grid lg:grid-cols-3 gap-16">
-              <motion.div {...fadeInUp}>
-                <h2 className="text-4xl font-bold tracking-tight mb-6">Veelgestelde vragen</h2>
-                <p className="text-dark-navy/60 mb-8">
-                  Alles wat je moet weten over de samenwerking met Athlic.
-                </p>
-                <a href="#contact" className="inline-flex items-center gap-2 font-bold text-coral">
-                  Stel een andere vraag <ArrowRight className="w-4 h-4" />
-                </a>
-              </motion.div>
-              
-              <div className="lg:col-span-2 space-y-4">
-                <FaqItem 
-                  question="Hoe snel zien we eerste aanvragen?" 
-                  answer="Meestal binnen de eerste twee weken na livegang. Zodra de tracking staat en de advertenties draaien, vangen we direct de lokale zoekvraag af." 
-                />
-                <FaqItem 
-                  question="Werkt dit als we al campagnes draaien?" 
-                  answer="Ja, we auditen bestaande campagnes en optimaliseren deze. Vaak is er veel winst te behalen in accountstructuur en tracking." 
-                />
-                <FaqItem 
-                  question="Wat hebben jullie nodig van ons?" 
-                  answer="Toegang tot je website, Google accounts en input over je ideale lid en huidige aanbod." 
-                />
-                <FaqItem 
-                  question="Moeten we onze website aanpassen?" 
-                  answer="Soms bouwen we een specifieke landingspagina om de conversie te verhogen. Je hoofdwebsite kan vaak blijven zoals hij is." 
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        
         {/* Waarom Athlic Section */}
-        <section className="py-32 px-6 bg-deep-navy relative overflow-hidden">
+        <section className="py-32 px-6 bg-white text-deep-navy">
           <div className="max-w-[1100px] mx-auto">
 
             {/* Header */}
             <motion.div {...fadeInUp} className="text-center mb-10">
               <p className="text-xs font-bold uppercase tracking-[0.15em] text-coral mb-3">Waarom Athlic?</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Wij bouwen systemen. Geen campagnes.</h2>
-              <p className="text-medium-gray text-base leading-relaxed max-w-[640px] mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-deep-navy mb-6">Wij bouwen systemen. Geen campagnes.</h2>
+              <p className="text-dark-navy/60 text-base leading-relaxed max-w-[640px] mx-auto">
                 Samen meer dan 20 jaar Google Ads-ervaring, aan bureau- en klantzijde. We weten hierdoor als geen ander waardoor het vaak mis gaat en hoe het wel moet:
               </p>
             </motion.div>
 
             {/* Vergelijkingstabel */}
-            <motion.div {...fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1e2333] rounded-[20px] overflow-hidden mb-8">
+            <motion.div {...fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/5 rounded-[20px] overflow-hidden mb-8 shadow-sm">
               {/* Links: andere bureaus */}
-              <div className="bg-[#14172a] p-8">
+              <div className="bg-light-gray p-8">
                 <div className="flex items-center gap-3 mb-5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#666]">Andere bureaus</span>
-                  <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-[#1e2333] text-[#555]">Losse diensten</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-dark-navy/40">Andere bureaus</span>
+                  <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-black/5 text-dark-navy/40">Losse diensten</span>
                 </div>
                 {[
                   "Website-aanpassingen die blijven liggen bij jouw webbouwer",
@@ -555,14 +521,14 @@ export default function App() {
                   "Elk platform claimt de conversie. Niemand weet wat echt werkt",
                   "Jij bent de projectmanager van je eigen marketing"
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 py-3 border-b border-white/[0.04] last:border-0">
-                    <div className="w-5 h-5 rounded-full bg-[#1e2333] flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold text-[#555]">✕</div>
-                    <p className="text-sm text-medium-gray leading-snug">{item}</p>
+                  <div key={i} className="flex items-start gap-3 py-3 border-b border-black/5 last:border-0">
+                    <div className="w-5 h-5 rounded-full bg-black/8 flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold text-dark-navy/30">✕</div>
+                    <p className="text-sm text-dark-navy/50 leading-snug">{item}</p>
                   </div>
                 ))}
               </div>
               {/* Rechts: Athlic */}
-              <div className="bg-[#161b2e] p-8">
+              <div className="bg-white p-8">
                 <div className="flex items-center gap-3 mb-5">
                   <span className="text-xs font-bold uppercase tracking-widest text-coral">Athlic systeem</span>
                   <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-coral/10 text-coral">Compleet</span>
@@ -573,16 +539,16 @@ export default function App() {
                   ["Alles via één kanaal", "kristalhelder wat elke proefles kost"],
                   ["Automatische opvolging", "eenmaal ingericht, draait het"]
                 ].map(([bold, rest], i) => (
-                  <div key={i} className="flex items-start gap-3 py-3 border-b border-white/[0.04] last:border-0">
+                  <div key={i} className="flex items-start gap-3 py-3 border-b border-black/5 last:border-0">
                     <div className="w-5 h-5 rounded-full bg-teal/10 flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold text-teal">✓</div>
-                    <p className="text-sm text-medium-gray leading-snug"><span className="text-white/90 font-semibold">{bold}</span> - {rest}</p>
+                    <p className="text-sm text-dark-navy/70 leading-snug"><span className="text-deep-navy font-semibold">{bold}</span> - {rest}</p>
                   </div>
                 ))}
               </div>
             </motion.div>
 
             {/* Quote */}
-            <motion.div {...fadeInUp} className="relative bg-gradient-to-br from-[#181d35] to-[#141929] border border-[#252a38] rounded-[18px] px-9 py-7 mb-7 overflow-hidden">
+            <motion.div {...fadeInUp} className="relative bg-dark-navy rounded-[18px] px-9 py-7 mb-7 overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-coral rounded-l-[18px]" />
               <p className="text-white font-semibold text-base leading-relaxed">
                 Het Athlic-systeem omzeilt deze struikelblokken. Eenmaal ingericht, draait het. Jij runt je gym. Wij zorgen voor de instroom.
@@ -591,7 +557,7 @@ export default function App() {
 
             {/* Systeem tekst */}
             <motion.div {...fadeInUp}>
-              <p className="text-medium-gray text-sm leading-relaxed mb-10">
+              <p className="text-dark-navy/60 text-sm leading-relaxed mb-10">
                 Ons systeem richt zich op het opvangen van bestaande vraag: mensen die al zoeken naar een sportschool of HYROX-gym in jouw buurt. Omdat alles via onze landingspagina loopt, weet je precies welke proefles-aanvraag uit Google Ads komt. Hierdoor weten we wat er wel en niet werkt en kunnen we beter bijsturen.
               </p>
             </motion.div>
@@ -629,7 +595,7 @@ export default function App() {
                     initial: { opacity: 0, y: 20 },
                     whileInView: { opacity: 1, y: 0 }
                   }}
-                  className="flex items-center gap-0 bg-[#181c27] border border-[#252a38] rounded-[18px] overflow-hidden"
+                  className="flex items-center bg-light-gray border border-black/5 rounded-[18px] overflow-hidden shadow-sm"
                 >
                   <img
                     src={person.img}
@@ -638,9 +604,9 @@ export default function App() {
                     style={{ objectPosition: person.imgPos }}
                   />
                   <div className="px-5 py-4">
-                    <p className="text-white font-bold text-base">{person.name}</p>
+                    <p className="text-deep-navy font-bold text-base">{person.name}</p>
                     <p className="text-coral text-[10px] font-bold uppercase tracking-widest mt-1 mb-2">{person.role}</p>
-                    <p className="text-medium-gray text-xs leading-relaxed">{person.bio}</p>
+                    <p className="text-dark-navy/60 text-xs leading-relaxed">{person.bio}</p>
                   </div>
                 </motion.div>
               ))}
@@ -652,7 +618,7 @@ export default function App() {
 
               {/* Desktop */}
               <div className="hidden md:grid grid-cols-6 gap-0 relative">
-                <div className="absolute top-[35px] left-[8.33%] right-[8.33%] h-[2px] bg-gradient-to-r from-transparent via-coral to-transparent z-0" />
+                <div className="absolute top-[35px] left-[8.33%] right-[8.33%] h-[2px] bg-gradient-to-r from-transparent via-coral to-transparent z-0 opacity-30" />
                 {[
                   { icon: "🔍", step: "Stap 1", title: "Zoeken", desc: "Iemand zoekt op Google naar een gym in de buurt" },
                   { icon: "📍", step: "Stap 2", title: "Vinden", desc: "Ze komen jouw gym tegen via Google Ads en je profiel" },
@@ -662,12 +628,12 @@ export default function App() {
                   { icon: "💬", step: "Stap 6", title: "Opvolging", desc: "Automatisch bericht: wordt het een lidmaatschap?" }
                 ].map((s, i) => (
                   <div key={i} className="relative z-10 flex flex-col items-center px-1.5">
-                    <div className="w-[70px] h-[70px] bg-[#181c27] border-2 border-[#252a38] rounded-full flex items-center justify-center text-2xl mb-3 hover:border-coral hover:bg-[#1c2133] transition-colors cursor-default relative z-20">
+                    <div className="w-[70px] h-[70px] bg-white border-2 border-black/8 rounded-full flex items-center justify-center text-2xl mb-3 hover:border-coral hover:shadow-md transition-all cursor-default relative z-20 shadow-sm">
                       {s.icon}
                     </div>
                     <p className="text-[9px] font-bold text-coral uppercase tracking-widest mb-1 text-center">{s.step}</p>
-                    <p className="text-[13px] font-bold text-white text-center mb-1">{s.title}</p>
-                    <p className="text-[11px] text-medium-gray text-center leading-snug">{s.desc}</p>
+                    <p className="text-[13px] font-bold text-deep-navy text-center mb-1">{s.title}</p>
+                    <p className="text-[11px] text-dark-navy/50 text-center leading-snug">{s.desc}</p>
                   </div>
                 ))}
               </div>
@@ -683,17 +649,17 @@ export default function App() {
                   { icon: "💬", step: "Stap 6", title: "Opvolging", desc: "Automatisch bericht: wordt het een lidmaatschap?" }
                 ].map((s, i, arr) => (
                   <div key={i} className="relative">
-                    <div className="flex items-start gap-4 bg-[#181c27] border border-[#252a38] rounded-xl p-4">
-                      <div className="w-12 h-12 bg-[#0f1117] border border-[#252a38] rounded-full flex items-center justify-center text-xl flex-shrink-0">{s.icon}</div>
+                    <div className="flex items-start gap-4 bg-light-gray border border-black/5 rounded-xl p-4 shadow-sm">
+                      <div className="w-12 h-12 bg-white border border-black/8 rounded-full flex items-center justify-center text-xl flex-shrink-0 shadow-sm">{s.icon}</div>
                       <div>
                         <p className="text-[9px] font-bold text-coral uppercase tracking-widest mb-0.5">{s.step}</p>
-                        <p className="text-sm font-bold text-white mb-1">{s.title}</p>
-                        <p className="text-xs text-medium-gray leading-relaxed">{s.desc}</p>
+                        <p className="text-sm font-bold text-deep-navy mb-1">{s.title}</p>
+                        <p className="text-xs text-dark-navy/60 leading-relaxed">{s.desc}</p>
                       </div>
                     </div>
                     {i < arr.length - 1 && (
                       <div className="flex justify-center my-1">
-                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[10px] border-t-coral opacity-60" />
+                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[10px] border-t-coral opacity-40" />
                       </div>
                     )}
                   </div>
@@ -705,7 +671,6 @@ export default function App() {
         </section>
 
         
-
         {/* Contact Section */}
         <section id="contact" className="py-32 px-6 bg-light-gray text-deep-navy">
           <div className="max-w-[1200px] mx-auto">
@@ -792,7 +757,45 @@ export default function App() {
             </div>
           </div>
         </section>
-      </main>
+
+        
+        {/* FAQ Section */}
+        <section id="faq" className="py-32 px-6 bg-light-gray text-deep-navy">
+          <div className="max-w-[1000px] mx-auto">
+            <div className="grid lg:grid-cols-3 gap-16">
+              <motion.div {...fadeInUp}>
+                <h2 className="text-4xl font-bold tracking-tight mb-6">Veelgestelde vragen</h2>
+                <p className="text-dark-navy/60 mb-8">
+                  Alles wat je moet weten over de samenwerking met Athlic.
+                </p>
+                <a href="#contact" className="inline-flex items-center gap-2 font-bold text-coral">
+                  Stel een andere vraag <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
+              
+              <div className="lg:col-span-2 space-y-4">
+                <FaqItem 
+                  question="Hoe snel zien we eerste aanvragen?" 
+                  answer="Meestal binnen de eerste twee weken na livegang. Zodra de tracking staat en de advertenties draaien, vangen we direct de lokale zoekvraag af." 
+                />
+                <FaqItem 
+                  question="Werkt dit als we al campagnes draaien?" 
+                  answer="Ja, we auditen bestaande campagnes en optimaliseren deze. Vaak is er veel winst te behalen in accountstructuur en tracking." 
+                />
+                <FaqItem 
+                  question="Wat hebben jullie nodig van ons?" 
+                  answer="Toegang tot je website, Google accounts en input over je ideale lid en huidige aanbod." 
+                />
+                <FaqItem 
+                  question="Moeten we onze website aanpassen?" 
+                  answer="Soms bouwen we een specifieke landingspagina om de conversie te verhogen. Je hoofdwebsite kan vaak blijven zoals hij is." 
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      
+</main>
 
       {/* Footer */}
       <footer className="bg-deep-navy border-t border-white/10 px-6 py-16">
