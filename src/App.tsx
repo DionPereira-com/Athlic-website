@@ -375,7 +375,7 @@ export default function App() {
               <div className="space-y-6">
                 {[
                   { number: "01", title: "Baseline & Tracking", desc: "We brengen de huidige prestaties in kaart en stellen waterdichte conversietracking in via GTM." },
-                  { number: "02", title: "Live Gang", desc: "Gerichte zoekcampagnes en Google Bedrijfsprofiel optimalisatie gaan live. Inclusief het maken van een landingspagina en het opzetten van automatische leadopvolging." },
+                  { number: "02", title: "Livegang", desc: "Gerichte zoekcampagnes en Google Bedrijfsprofiel optimalisatie gaan live. Inclusief het maken van een landingspagina en het opzetten van automatische leadopvolging." },
                   { number: "03", title: "Autoriteit Bouwen", desc: "We implementeren een systeem voor reviews en versterken je lokale online autoriteit." },
                   { number: "04", title: "Optimalisatie", desc: "Continu bijsturen op basis van harde data voor de hoogste kwaliteit aanvragen." }
                 ].map((step, i) => (
