@@ -375,7 +375,7 @@ export default function App() {
               <div className="space-y-6">
                 {[
                   { number: "01", title: "Baseline & Tracking", desc: "We brengen de huidige prestaties in kaart en stellen waterdichte conversietracking in via GTM." },
-                  { number: "02", title: "Livegang", desc: "Gerichte zoekcampagnes en Google Bedrijfsprofiel optimalisatie gaan live. Inclusief het maken van een landingspagina en het opzetten van automatische leadopvolging." },
+                  { number: "02", title: "Live Gang", desc: "Gerichte zoekcampagnes en Google Bedrijfsprofiel optimalisatie gaan live. Inclusief het maken van een landingspagina en het opzetten van automatische leadopvolging." },
                   { number: "03", title: "Autoriteit Bouwen", desc: "We implementeren een systeem voor reviews en versterken je lokale online autoriteit." },
                   { number: "04", title: "Optimalisatie", desc: "Continu bijsturen op basis van harde data voor de hoogste kwaliteit aanvragen." }
                 ].map((step, i) => (
@@ -447,7 +447,7 @@ export default function App() {
 <section id="voor-wie" className="py-32 px-6 bg-dark-navy relative overflow-hidden">
   <div className="absolute inset-0 z-0">
     <img src="/voor-wie-bg3.webp" className="w-full h-full object-cover object-center" />
-    <div className="absolute inset-0 bg-dark-navy/90" />
+    <div className="absolute inset-0 bg-dark-navy/95" />
   </div>
   <div className="max-w-[1200px] mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -760,12 +760,12 @@ export default function App() {
 
         
         {/* FAQ Section */}
-        <section id="faq" className="py-32 px-6 bg-light-gray text-deep-navy">
+        <section id="faq" className="py-32 px-6 bg-dark-navy text-white">
           <div className="max-w-[1000px] mx-auto">
             <div className="grid lg:grid-cols-3 gap-16">
               <motion.div {...fadeInUp}>
-                <h2 className="text-4xl font-bold tracking-tight mb-6">Veelgestelde vragen</h2>
-                <p className="text-dark-navy/60 mb-8">
+                <h2 className="text-4xl font-bold tracking-tight mb-6 text-white">Veelgestelde vragen</h2>
+                <p className="text-white/50 mb-8">
                   Alles wat je moet weten over de samenwerking met Athlic.
                 </p>
                 <a href="#contact" className="inline-flex items-center gap-2 font-bold text-coral">
@@ -872,14 +872,15 @@ export default function App() {
 const FaqItem = ({ question, answer }: { question: string, answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-white rounded-2xl border border-black/5 overflow-hidden transition-all">
+    <div className="rounded-2xl border border-white/10 overflow-hidden transition-all" style={{ background: 'rgba(255,255,255,0.05)' }}>
       <button 
-        className="w-full p-6 flex justify-between items-center text-left font-bold text-deep-navy hover:bg-light-gray/50 transition-all"
+        className="w-full p-6 flex justify-between items-center text-left font-bold text-white transition-all"
+        style={{ background: isOpen ? 'rgba(255,255,255,0.05)' : 'transparent' }}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="pr-4">{question}</span>
-        <div className={`w-8 h-8 rounded-full border border-black/5 flex items-center justify-center transition-transform duration-300 ${isOpen ? 'rotate-180 bg-coral border-coral' : ''}`}>
-          <ChevronDown className={`w-4 h-4 transition-colors ${isOpen ? 'text-white' : 'text-medium-gray'}`} />
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 border ${isOpen ? 'rotate-180 bg-coral border-coral' : 'border-white/20'}`}>
+          <ChevronDown className={`w-4 h-4 transition-colors ${isOpen ? 'text-white' : 'text-white/50'}`} />
         </div>
       </button>
       <motion.div 
@@ -887,7 +888,7 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
         animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
         className="overflow-hidden"
       >
-        <div className="p-6 pt-0 text-dark-navy/60 leading-relaxed border-t border-black/5">
+        <div className="p-6 pt-0 text-white/50 leading-relaxed border-t border-white/10">
           {answer}
         </div>
       </motion.div>
