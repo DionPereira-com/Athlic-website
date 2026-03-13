@@ -447,7 +447,7 @@ export default function App() {
 <section id="voor-wie" className="py-32 px-6 bg-dark-navy relative overflow-hidden">
   <div className="absolute inset-0 z-0">
     <img src="/voor-wie-bg3.webp" className="w-full h-full object-cover object-center" />
-    <div className="absolute inset-0 bg-dark-navy/95" />
+    <div className="absolute inset-0 bg-dark-navy/90" />
   </div>
   <div className="max-w-[1200px] mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
