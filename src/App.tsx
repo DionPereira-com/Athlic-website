@@ -503,7 +503,7 @@ export default function App() {
               <p className="text-xs font-bold uppercase tracking-[0.15em] text-coral mb-3">Waarom Athlic?</p>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-deep-navy mb-6">Wij bouwen systemen. Geen campagnes.</h2>
               <p className="text-dark-navy/60 text-base leading-relaxed max-w-[640px] mx-auto">
-                Samen meer dan 20 jaar Google Ads-ervaring, aan bureau- en klantzijde. We weten hierdoor als geen ander waardoor het vaak mis gaat en hoe het wel moet:
+                Samen meer dan 20 jaar ervaring, aan bureau- en klantzijde. We weten hierdoor als geen ander waardoor het vaak mis gaat en hoe het wel moet:
               </p>
             </motion.div>
 
