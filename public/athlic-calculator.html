@@ -468,10 +468,30 @@
     border-top: 1px solid var(--border);
     padding: 28px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
     font-size: 13px;
     color: var(--gray);
+  }
+
+  .footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-contact a {
+    color: var(--gray);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+
+  .footer-contact a:hover {
+    color: var(--white);
   }
 
   .freq-btns {
@@ -674,6 +694,13 @@
 
   <footer>
     <span>© 2026 Athlic</span>
+    <div class="footer-contact">
+      <a href="tel:+31782049511">+31 (0)78 2049511</a>
+      <a href="mailto:hello@athlic.io">hello@athlic.io</a>
+      <a href="https://www.linkedin.com/company/athlic-marketing/" target="_blank" rel="noopener noreferrer" aria-label="Athlic op LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
   </footer>
 </div>
 

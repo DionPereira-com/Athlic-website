@@ -1,28 +1,16 @@
 import { useState } from 'react';
-import { ArrowLeft, ArrowRight, Mail, MapPin, Phone, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Mail, MapPin, Phone, CheckCircle2 } from 'lucide-react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const WEB3FORMS_KEY = '08235afe-dfd2-4c61-a761-f9cc20e01b40';
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-deep-navy text-light-gray font-sans">
-      {/* Nav */}
-      <header className="px-6 py-6 border-b border-white/10">
-        <div className="max-w-[1200px] mx-auto flex items-center justify-between">
-          <a href="/" className="font-bold text-2xl tracking-tight text-white">
-            Athlic
-          </a>
-          <a
-            href="/"
-            className="flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Terug
-          </a>
-        </div>
-      </header>
+      <Header />
 
-      <main className="px-6 py-20">
+      <main className="px-6 pt-32 pb-20">
         <div className="max-w-[1200px] mx-auto">
           {/* Header */}
           <div className="mb-16 max-w-2xl">
@@ -58,8 +46,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-1">Telefoon</p>
-                    <a href="tel:+31162700555" className="text-white hover:text-coral transition-colors font-medium">
-                      0162-700555
+                    <a href="tel:+31782049511" className="text-white hover:text-coral transition-colors font-medium">
+                      +31 (0)78 2049511
                     </a>
                   </div>
                 </div>
@@ -72,8 +60,8 @@ export default function ContactPage() {
                     <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-1">Adres</p>
                     <p className="text-white/70 text-sm leading-relaxed">
                       Athlic<br />
-                      Napoleonshoed 21<br />
-                      4906 LC Oosterhout<br />
+                      Van der Steenhovenplein 72<br />
+                      3317 NM Dordrecht<br />
                       Nederland
                     </p>
                   </div>
@@ -119,16 +107,7 @@ export default function ContactPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 px-6 py-8 mt-20">
-        <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
-          <p>© 2026 Athlic. KvK 66050936.</p>
-          <div className="flex gap-6">
-            <a href="/privacybeleid" className="hover:text-white transition-colors">Privacybeleid</a>
-            <a href="/cookiebeleid" className="hover:text-white transition-colors">Cookiebeleid</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

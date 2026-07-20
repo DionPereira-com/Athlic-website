@@ -1,4 +1,5 @@
 import { ArrowLeft } from 'lucide-react';
+import Footer from '../components/Footer';
 
 export default function PrivacybeleidPage() {
   return (
@@ -44,8 +45,8 @@ export default function PrivacybeleidPage() {
               <p>Wij zijn de verwerkingsverantwoordelijke voor jouw persoonsgegevens:</p>
               <div className="bg-white/5 rounded-2xl p-6 mt-4 space-y-1 text-white/70">
                 <p className="font-semibold text-white">Athlic</p>
-                <p>Napoleonshoed 21</p>
-                <p>4906 LC Oosterhout</p>
+                <p>Van der Steenhovenplein 72</p>
+                <p>3317 NM Dordrecht</p>
                 <p>Nederland</p>
                 <p className="pt-2">KvK-nummer: 66050936</p>
                 <p>E-mail: <a href="mailto:hello@athlic.io" className="text-coral hover:underline">hello@athlic.io</a></p>
@@ -186,7 +187,7 @@ export default function PrivacybeleidPage() {
               <p>Heb je vragen over dit privacybeleid? Neem contact op via:</p>
               <div className="bg-white/5 rounded-2xl p-6 mt-4 space-y-1 text-white/70">
                 <p><span className="text-white font-medium">E-mail:</span> <a href="mailto:hello@athlic.io" className="text-coral hover:underline">hello@athlic.io</a></p>
-                <p><span className="text-white font-medium">Post:</span> Athlic, Napoleonshoed 21, 4906 LC Oosterhout</p>
+                <p><span className="text-white font-medium">Post:</span> Athlic, Van der Steenhovenplein 72, 3317 NM Dordrecht</p>
               </div>
             </Section>
 
@@ -194,16 +195,7 @@ export default function PrivacybeleidPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 px-6 py-8 mt-20">
-        <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
-          <p>Â© 2026 Athlic. KvK 66050936.</p>
-          <div className="flex gap-6">
-            <a href="/privacybeleid" className="hover:text-white transition-colors">Privacybeleid</a>
-            <a href="/cookiebeleid" className="hover:text-white transition-colors">Cookiebeleid</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
